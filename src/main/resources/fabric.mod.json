@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "usefulcommand",
+  "version": "${version}",
+  "name": "usefulCommand",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/Admin/usefulcommand"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/usefulCommand/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "org.karn.usefulcommand.UsefulCommand"
+    ]
+  },
+  "mixins": [
+    "usefulcommand.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
