@@ -42,8 +42,7 @@ public  class Motion {
     }
 
     private static int addMotion(ServerCommandSource source, Entity entity, float x ,float y, float z) {
-        Vec3d vec3d = entity.getVelocity();
-        entity.setVelocity(vec3d.x+x,vec3d.x+y,vec3d.x+z);
+        entity.addVelocity(x,y,z);
         if(entity.isPlayer()){
             entity.velocityModified = true;
         }

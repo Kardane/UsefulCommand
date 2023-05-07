@@ -17,6 +17,8 @@ public class UsefulCommand implements ModInitializer {
             Invulnerable.register(dispatcher);
             Motion.register(dispatcher);
             PlayerAbility.register(dispatcher);
+            Heal.register(dispatcher);
+            Food.register(dispatcher);
         });
 
     }

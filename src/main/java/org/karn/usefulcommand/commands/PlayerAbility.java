@@ -33,7 +33,7 @@ public  class PlayerAbility {
                         )
                 )
                 .then(CommandManager.literal("walk")
-                        .then(argument("speed", FloatArgumentType.floatArg(0.1F))
+                        .then(argument("speed", FloatArgumentType.floatArg(0.01F))
                                 .executes(ctx -> {
                                     return setWalkSpeed(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), ctx.getArgument("speed", Float.class));
                                 })
