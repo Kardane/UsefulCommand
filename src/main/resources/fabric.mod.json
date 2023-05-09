@@ -16,9 +16,6 @@
       "org.karn.usefulcommand.UsefulCommand"
     ]
   },
-  "mixins": [
-    "usefulcommand.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",

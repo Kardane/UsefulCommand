@@ -21,6 +21,7 @@ public class UsefulCommand implements ModInitializer {
             Food.register(dispatcher);
             Random.register(dispatcher);
             Fallfly.register(dispatcher);
+            //Cooldown.register(dispatcher);
         });
 
     }
