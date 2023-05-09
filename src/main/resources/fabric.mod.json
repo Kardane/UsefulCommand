@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "usefulcommand",
+  "id": "karnsusefulcommand",
   "version": "${version}",
-  "name": "usefulCommand",
+  "name": "karnsusefulcommand",
   "description": "",
   "authors": [],
   "contact": {

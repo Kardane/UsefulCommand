@@ -15,6 +15,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public  class Food {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("food")
+                .requires(source -> source.hasPermissionLevel(2))
                 .then(argument("player", EntityArgumentType.player())
                         .then(CommandManager.literal("hunger")
                                 .then(CommandManager.literal("get")

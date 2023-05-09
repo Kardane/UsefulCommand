@@ -13,7 +13,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public  class Invulnerable {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("invulnerable")
-                .requires(source -> source.hasPermissionLevel(4))
+                .requires(source -> source.hasPermissionLevel(2))
                 .then(argument("entity", EntityArgumentType.entity())
                 .then(CommandManager.literal("on")
                         .executes(ctx -> {

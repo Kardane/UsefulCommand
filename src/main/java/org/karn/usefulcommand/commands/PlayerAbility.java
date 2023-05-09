@@ -14,6 +14,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public  class PlayerAbility {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("player_ability")
+                .requires(source -> source.hasPermissionLevel(2))
                 .then(argument("player", EntityArgumentType.player())
                 .then(CommandManager.literal("fly")
                        .then(CommandManager.literal("on")

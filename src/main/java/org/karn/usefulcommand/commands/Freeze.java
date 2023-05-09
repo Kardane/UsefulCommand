@@ -14,7 +14,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public  class Freeze {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("freeze")
-                .requires(source -> source.hasPermissionLevel(4))
+                .requires(source -> source.hasPermissionLevel(2))
                 .then(argument("entity", EntityArgumentType.entity())
                 .then(CommandManager.literal("get")
                         .executes(ctx -> {

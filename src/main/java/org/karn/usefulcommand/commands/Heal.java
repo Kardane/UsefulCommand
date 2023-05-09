@@ -13,7 +13,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public  class Heal {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("heal")
-                .requires(source -> source.hasPermissionLevel(4))
+                .requires(source -> source.hasPermissionLevel(2))
                 .then(argument("entity", EntityArgumentType.entity())
                         .then(argument("amount", FloatArgumentType.floatArg(0.001F))
                                 .executes(ctx -> {

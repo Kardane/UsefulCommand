@@ -19,6 +19,8 @@ public class UsefulCommand implements ModInitializer {
             PlayerAbility.register(dispatcher);
             Heal.register(dispatcher);
             Food.register(dispatcher);
+            Random.register(dispatcher);
+            Fallfly.register(dispatcher);
         });
 
     }

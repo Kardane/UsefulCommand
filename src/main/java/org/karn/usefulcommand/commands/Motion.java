@@ -15,6 +15,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public  class Motion {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("motion")
+                .requires(source -> source.hasPermissionLevel(2))
                 .then(argument("entity", EntityArgumentType.entity())
                 .then(CommandManager.literal("add")
                         .then(argument("x", FloatArgumentType.floatArg())
