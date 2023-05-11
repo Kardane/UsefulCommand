@@ -9,7 +9,7 @@ public class UsefulCommand implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        CommandRegistrationCallback.EVENT.register((dispatcher, ignored, ignored1) -> {
+        CommandRegistrationCallback.EVENT.register((dispatcher, commandRegistryAccess, ignored1) -> {
             Fire.register(dispatcher);
             Freeze.register(dispatcher);
             Absorption.register(dispatcher);
@@ -21,7 +21,7 @@ public class UsefulCommand implements ModInitializer {
             Food.register(dispatcher);
             Random.register(dispatcher);
             Fallfly.register(dispatcher);
-            //Cooldown.register(dispatcher);
+            Cooldown.register(dispatcher,commandRegistryAccess);
         });
 
     }
