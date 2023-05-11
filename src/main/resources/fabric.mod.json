@@ -10,7 +10,7 @@
   },
   "license": "All-Rights-Reserved",
   "icon": "assets/usefulCommand/icon.png",
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
     "main": [
       "org.karn.usefulcommand.UsefulCommand"
