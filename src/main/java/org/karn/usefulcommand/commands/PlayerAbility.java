@@ -1,6 +1,7 @@
 package org.karn.usefulcommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.FloatArgumentType;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -17,14 +18,9 @@ public  class PlayerAbility {
                 .requires(source -> source.hasPermissionLevel(2))
                 .then(argument("player", EntityArgumentType.player())
                 .then(CommandManager.literal("fly")
-                       .then(CommandManager.literal("on")
+                        .then(argument("on/off", BoolArgumentType.bool())
                                 .executes(ctx -> {
-                                       return setFly(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), true);
-                                })
-                       )
-                        .then(CommandManager.literal("off")
-                                .executes(ctx -> {
-                                    return setFly(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), false);
+                                    return setFly(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), BoolArgumentType.getBool(ctx,"on/off"));
                                 })
                         )
                         .then(argument("speed", FloatArgumentType.floatArg(0.1F))
@@ -41,30 +37,19 @@ public  class PlayerAbility {
                         )
                 )
                 .then(CommandManager.literal("allowBuild")
-                        .then(CommandManager.literal("on")
+                        .then(argument("on/off", BoolArgumentType.bool())
                                 .executes(ctx -> {
-                                    return setBuild(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), true);
-                                })
-                        )
-                        .then(CommandManager.literal("off")
-                                .executes(ctx -> {
-                                    return setBuild(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), false);
+                                    return setBuild(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), BoolArgumentType.getBool(ctx,"on/off"));
                                 })
                         )
                 )
                 .then(CommandManager.literal("instantBreak")
-                        .then(CommandManager.literal("on")
+                        .then(argument("on/off", BoolArgumentType.bool())
                                 .executes(ctx -> {
-                                                    return setinstantBreak(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), true);
-                                                })
-                                        )
-                        .then(CommandManager.literal("off")
-                                                .executes(ctx -> {
-                                                    return setinstantBreak(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), false);
-                                                })
-                                        )
+                                    return setinstantBreak(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), BoolArgumentType.getBool(ctx,"on/off"));
+                                })
                         )
-                ));
+                )));
     }
 
     private static int setFly(ServerCommandSource source, PlayerEntity player, boolean status) {

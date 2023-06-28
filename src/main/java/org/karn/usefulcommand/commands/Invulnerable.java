@@ -1,6 +1,7 @@
 package org.karn.usefulcommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.arguments.BoolArgumentType;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.command.CommandManager;
@@ -15,16 +16,11 @@ public  class Invulnerable {
         dispatcher.register(literal("invulnerable")
                 .requires(source -> source.hasPermissionLevel(2))
                 .then(argument("entity", EntityArgumentType.entity())
-                .then(CommandManager.literal("on")
-                        .executes(ctx -> {
-                            return invulnerableChange(ctx.getSource(), EntityArgumentType.getEntity(ctx,"entity"), true);
-                        })
-                )
-                .then(CommandManager.literal("off")
-                        .executes(ctx -> {
-                            return invulnerableChange(ctx.getSource(), EntityArgumentType.getEntity(ctx,"entity"), false);
-                        })
-                )
+                        .then(argument("on/off", BoolArgumentType.bool())
+                                .executes(ctx -> {
+                                    return invulnerableChange(ctx.getSource(), EntityArgumentType.getEntity(ctx,"entity"), BoolArgumentType.getBool(ctx,"on/off"));
+                                })
+                        )
         ));
     }
 

@@ -22,6 +22,8 @@ public class UsefulCommand implements ModInitializer {
             Random.register(dispatcher);
             Fallfly.register(dispatcher);
             Cooldown.register(dispatcher,commandRegistryAccess);
+            Explosion.register(dispatcher);
+            MotionUpdate.register(dispatcher);
         });
 
     }
