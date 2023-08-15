@@ -63,7 +63,7 @@ public  class Food {
         );
     }
     private static int getFood(ServerCommandSource source, PlayerEntity player) {
-        source.sendFeedback(Text.literal("Hunger: ").append(String.valueOf(player.getHungerManager().getFoodLevel())), false);
+        source.sendFeedback(() ->Text.literal("Hunger: ").append(String.valueOf(player.getHungerManager().getFoodLevel())), false);
         return player.getHungerManager().getFoodLevel();
     }
     private static int setFood(ServerCommandSource source, PlayerEntity player, int hunger, boolean override) {
@@ -73,12 +73,12 @@ public  class Food {
             int finalhunger = player.getHungerManager().getFoodLevel() + hunger;
             player.getHungerManager().setFoodLevel(finalhunger);
         }
-        source.sendFeedback(Text.literal("Hunger: ").append(String.valueOf(player.getHungerManager().getFoodLevel())), false);
+        source.sendFeedback(() ->Text.literal("Hunger: ").append(String.valueOf(player.getHungerManager().getFoodLevel())), false);
         return player.getHungerManager().getFoodLevel();
     }
 
     private static int getSaturation(ServerCommandSource source, PlayerEntity player) {
-        source.sendFeedback(Text.literal("Saturation: ").append(String.valueOf(player.getHungerManager().getSaturationLevel())), false);
+        source.sendFeedback(() ->Text.literal("Saturation: ").append(String.valueOf(player.getHungerManager().getSaturationLevel())), false);
         return (int) player.getHungerManager().getSaturationLevel();
     }
     private static int setSaturation(ServerCommandSource source, PlayerEntity player, float saturation, boolean override) {
@@ -88,7 +88,7 @@ public  class Food {
             float finalsaturation = player.getHungerManager().getSaturationLevel() + saturation;
             player.getHungerManager().setSaturationLevel(finalsaturation);
         }
-        source.sendFeedback(Text.literal("Saturation: ").append(String.valueOf(player.getHungerManager().getSaturationLevel())), false);
+        source.sendFeedback(() ->Text.literal("Saturation: ").append(String.valueOf(player.getHungerManager().getSaturationLevel())), false);
         return (int) player.getHungerManager().getSaturationLevel();
     }
 

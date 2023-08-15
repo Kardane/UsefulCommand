@@ -34,7 +34,7 @@ public  class Cooldown {
     private static int setCooldown(ServerCommandSource source, PlayerEntity player, ItemStackArgument  item, int duration) {
         Item coolItem = item.getItem();
         player.getItemCooldownManager().set(coolItem, duration);
-        source.sendFeedback(Text.literal("Set Cooldown"), false);
+        source.sendFeedback(() ->Text.literal("asd"), false);
         return 1;
     }
 

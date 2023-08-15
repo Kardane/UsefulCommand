@@ -23,7 +23,7 @@ public  class Random {
 
     private static int getRandom(ServerCommandSource source, int min, int max) {
         int output = (int) (Math.random() * max + min);
-        source.sendFeedback(Text.literal("Random Output: ").append(String.valueOf(output)), false);
+        source.sendFeedback(() ->Text.literal("Random Output: ").append(String.valueOf(output)), false);
         return output;
     }
 }

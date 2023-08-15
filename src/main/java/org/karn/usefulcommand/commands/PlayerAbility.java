@@ -56,35 +56,35 @@ public  class PlayerAbility {
         player.getAbilities().allowFlying = status;
         player.getAbilities().flying = status;
         player.sendAbilitiesUpdate();
-        source.sendFeedback(Text.literal("Fly: ").append(String.valueOf(status)), false);
+        source.sendFeedback(() ->Text.literal("Fly: ").append(String.valueOf(status)), false);
         return 1;
     }
 
     private static int setFlySpeed(ServerCommandSource source, PlayerEntity player, float speed) {
         player.getAbilities().setFlySpeed(speed);
         player.sendAbilitiesUpdate();
-        source.sendFeedback(Text.literal("Fly Speed: ").append(String.valueOf(speed)), false);
+        source.sendFeedback(() ->Text.literal("Fly Speed: ").append(String.valueOf(speed)), false);
         return 1;
     }
 
     private static int setWalkSpeed(ServerCommandSource source, PlayerEntity player, float speed) {
         player.getAbilities().setWalkSpeed(speed);
         player.sendAbilitiesUpdate();
-        source.sendFeedback(Text.literal("Walk Speed: ").append(String.valueOf(speed)), false);
+        source.sendFeedback(() ->Text.literal("Walk Speed: ").append(String.valueOf(speed)), false);
         return 1;
     }
 
     private static int setBuild(ServerCommandSource source, PlayerEntity player, boolean status) {
         player.getAbilities().allowModifyWorld = status;
         player.sendAbilitiesUpdate();
-        source.sendFeedback(Text.literal("BuildMode: ").append(String.valueOf(status)), false);
+        source.sendFeedback(() ->Text.literal("BuildMode: ").append(String.valueOf(status)), false);
         return 1;
     }
 
     private static int setinstantBreak(ServerCommandSource source, PlayerEntity player, boolean status) {
         player.getAbilities().creativeMode = status;
         player.sendAbilitiesUpdate();
-        source.sendFeedback(Text.literal("InstantBreak: ").append(String.valueOf(status)), false);
+        source.sendFeedback(() ->Text.literal("InstantBreak: ").append(String.valueOf(status)), false);
         return 1;
     }
 }

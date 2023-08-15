@@ -64,7 +64,7 @@ public class Explosion {
     private static int explode(ServerCommandSource source, Entity entity, Vec3d pos, float power, boolean createFire, World.ExplosionSourceType sourceType) {
         World world = source.getWorld();
         world.createExplosion(entity, pos.getX(), pos.getY(), pos.getZ(), power, createFire, sourceType);
-        source.sendFeedback(Text.literal("Boom!"), false);
+        source.sendFeedback(() ->Text.literal("Boom!"), false);
         return 1;
     }
 }

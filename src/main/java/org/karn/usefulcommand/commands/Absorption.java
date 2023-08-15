@@ -39,7 +39,7 @@ public  class Absorption {
     }
 
     private static int getAbsorption(ServerCommandSource source, LivingEntity entity) {
-        source.sendFeedback(Text.literal("Absorption Amount: ").append(String.valueOf(entity.getAbsorptionAmount())), false);
+        source.sendFeedback(() -> Text.literal("Absorption Amount: ").append(String.valueOf(entity.getAbsorptionAmount())), false);
         return (int) entity.getAbsorptionAmount();
     }
 
@@ -51,7 +51,7 @@ public  class Absorption {
             entity.setAbsorptionAmount(finalabsorption);
         }
 
-        source.sendFeedback(Text.literal("Absorption Amount: ").append(String.valueOf(entity.getAbsorptionAmount())), false);
+        source.sendFeedback(() -> Text.literal("Absorption Amount: ").append(String.valueOf(entity.getAbsorptionAmount())), false);
         return (int) entity.getAbsorptionAmount();
     }
 

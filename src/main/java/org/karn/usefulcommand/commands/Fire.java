@@ -39,7 +39,7 @@ public  class Fire {
     }
 
     private static int getFire(ServerCommandSource source, Entity entity) {
-        source.sendFeedback(Text.literal("Fire Tick: ").append(String.valueOf(entity.getFireTicks())), false);
+        source.sendFeedback(() ->Text.literal("Fire Tick: ").append(String.valueOf(entity.getFireTicks())), false);
         return entity.getFireTicks();
     }
 
@@ -51,7 +51,7 @@ public  class Fire {
             entity.setFireTicks(finalfiretick);
         }
 
-        source.sendFeedback(Text.literal("Fire Tick: ").append(String.valueOf(entity.getFireTicks())), false);
+        source.sendFeedback(() ->Text.literal("Fire Tick: ").append(String.valueOf(entity.getFireTicks())), false);
         return entity.getFireTicks();
     }
 

@@ -24,6 +24,8 @@ public class UsefulCommand implements ModInitializer {
             Cooldown.register(dispatcher,commandRegistryAccess);
             Explosion.register(dispatcher);
             MotionUpdate.register(dispatcher);
+            camera.register(dispatcher);
+            MouseItem.register(dispatcher);
         });
 
     }

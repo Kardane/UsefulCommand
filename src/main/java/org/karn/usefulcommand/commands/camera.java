@@ -1,29 +1,31 @@
 package org.karn.usefulcommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.arguments.BoolArgumentType;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.entity.Entity;
-import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;
 
-public class MotionUpdate {
+public class camera {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        dispatcher.register(literal("motionupdate")
+        dispatcher.register(literal("cameraset")
                 .requires(source -> source.hasPermissionLevel(2))
                 .then(argument("entity", EntityArgumentType.entity())
                         .executes(ctx -> {
-                            return motionUpdate(ctx.getSource(), EntityArgumentType.getEntity(ctx,"entity"));
+                            camerSet(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"));
+                            return 1;
                         })
                 ));
     }
 
-    private static int motionUpdate(ServerCommandSource source, Entity entity) {
-        entity.velocityModified = true;
-        source.sendFeedback(() ->Text.literal("Updated Motion for: ").append(String.valueOf(entity.getDisplayName())), false);
+    private static int camerSet(ServerCommandSource source, Entity entity) {
+        ServerPlayerEntity player = source.getPlayer();
+        player.setCameraEntity(entity);
         return 1;
     }
 }

@@ -22,7 +22,7 @@ public  class Fallfly {
 
     private static int startFallfly(ServerCommandSource source, PlayerEntity player) {
         player.startFallFlying();
-        source.sendFeedback(Text.literal("Started fallflying"), false);
+        source.sendFeedback(() ->Text.literal("Started fallflying"), false);
         return 1;
     }
 

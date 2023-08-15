@@ -39,7 +39,7 @@ public  class Freeze {
     }
 
     private static int getFreeze(ServerCommandSource source, Entity entity) {
-        source.sendFeedback(Text.literal("Freeze Tick: ").append(String.valueOf(entity.getFrozenTicks())), false);
+        source.sendFeedback(() ->Text.literal("Freeze Tick: ").append(String.valueOf(entity.getFrozenTicks())), false);
         return entity.getFrozenTicks();
     }
 
@@ -51,7 +51,7 @@ public  class Freeze {
             entity.setFrozenTicks(finalFreezeticks);
         }
 
-        source.sendFeedback(Text.literal("Freeze Tick: ").append(String.valueOf(entity.getFrozenTicks())), false);
+        source.sendFeedback(() ->Text.literal("Freeze Tick: ").append(String.valueOf(entity.getFrozenTicks())), false);
         return entity.getFrozenTicks();
     }
 
