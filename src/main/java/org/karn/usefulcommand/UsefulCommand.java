@@ -9,6 +9,7 @@ public class UsefulCommand implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        System.out.println("Karn's UsefulCommand is initialized!");
         CommandRegistrationCallback.EVENT.register((dispatcher, commandRegistryAccess, ignored1) -> {
             Fire.register(dispatcher);
             Freeze.register(dispatcher);
@@ -19,7 +20,6 @@ public class UsefulCommand implements ModInitializer {
             PlayerAbility.register(dispatcher);
             Heal.register(dispatcher);
             Food.register(dispatcher);
-            Random.register(dispatcher);
             Fallfly.register(dispatcher);
             Cooldown.register(dispatcher,commandRegistryAccess);
             Explosion.register(dispatcher);

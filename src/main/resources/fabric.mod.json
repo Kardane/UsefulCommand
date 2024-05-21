@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "karnsusefulcommand",
+  "id": "karns_usefulcommand",
   "version": "${version}",
   "name": "karnsusefulcommand",
   "description": "",
@@ -16,6 +16,7 @@
       "org.karn.usefulcommand.UsefulCommand"
     ]
   },
+  "mixins": ["usefulCommand.mixins.json"],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",

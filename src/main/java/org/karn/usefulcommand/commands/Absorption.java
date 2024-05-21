@@ -22,14 +22,14 @@ public  class Absorption {
                         })
                 )
                 .then(CommandManager.literal("set")
-                        .then(argument("amount", FloatArgumentType.floatArg(0.1F))
+                        .then(argument("amount", FloatArgumentType.floatArg(0F))
                                 .executes(ctx -> {
                                     return setAbsorption(ctx.getSource(), (LivingEntity) EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("amount", Float.class), true);
                                 })
                         )
                 )
                 .then(CommandManager.literal("add")
-                        .then(argument("amount", FloatArgumentType.floatArg(0.1F))
+                        .then(argument("amount", FloatArgumentType.floatArg(0F))
                                 .executes(ctx -> {
                                       return setAbsorption(ctx.getSource(), (LivingEntity) EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("amount", Float.class), false);
                                 })
