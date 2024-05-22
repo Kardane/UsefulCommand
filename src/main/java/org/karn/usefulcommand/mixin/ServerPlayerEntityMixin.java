@@ -25,10 +25,4 @@ public class ServerPlayerEntityMixin {
         if(player.hasPassengers())
             player.getFirstPassenger().stopRiding();
     }
-
-    @Inject(method="onDisconnect", at=@At("HEAD"))
-    public void onDisconnect(CallbackInfo ci) {
-        if(player.hasVehicle() && player.getVehicle() instanceof PlayerEntity)
-            player.stopRiding();
-    }
 }
