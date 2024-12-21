@@ -4,6 +4,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.FloatArgumentType;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
@@ -44,6 +45,7 @@ public  class Absorption {
     }
 
     private static int setAbsorption(ServerCommandSource source, LivingEntity entity, float amount, boolean override) {
+        entity.getAttributes().getCustomInstance(EntityAttributes.MAX_ABSORPTION).setBaseValue(amount);
         if(override){
             entity.setAbsorptionAmount(amount);
         } else {
