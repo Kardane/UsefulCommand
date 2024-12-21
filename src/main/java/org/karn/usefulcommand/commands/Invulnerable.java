@@ -27,7 +27,7 @@ public  class Invulnerable {
     private static int invulnerableChange(ServerCommandSource source, Entity entity, boolean status) {
         entity.setInvulnerable(status);
         source.sendFeedback(() ->Text.literal("Invulnerable: ").append(String.valueOf(status)), false);
-        return 1;
+        return entity.isInvulnerable() ? 1 : 0;
     }
 
 }

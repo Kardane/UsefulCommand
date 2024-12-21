@@ -65,6 +65,6 @@ public class Explosion {
         World world = source.getWorld();
         world.createExplosion(entity, pos.getX(), pos.getY(), pos.getZ(), power, createFire, sourceType);
         source.sendFeedback(() ->Text.literal("Boom!"), false);
-        return 1;
+        return (int) power;
     }
 }

@@ -22,8 +22,6 @@ useful command for datapack/command makes in Minecraft
 
 `/fallfly` 플레이어를 겉날개 활공 상태로 만듭니다. 반복적으로 사용하는 것을 권장합니다.
 
-`/random (min) (max)` 범위내 무작위 숫자를 반환합니다.
-
 `/cooldown (대상) (item) (cooldown)` 아이템에게 재사용 대기시간을 부여합니다. (엔더 진주/후렴과/방패의 재사용대기시간과 같은것입니다.)
 
 `/motionupdate (대상)` 대상의 Motion값을 업데이트시킵니다. `/data merge`로 플레이어의 Motion값을 변경시키고 연이어 사용하세요.

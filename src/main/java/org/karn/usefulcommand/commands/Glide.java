@@ -9,9 +9,9 @@ import net.minecraft.text.Text;
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;
 
-public  class Fallfly {
+public  class Glide {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        dispatcher.register(literal("fallflying")
+        dispatcher.register(literal("glide")
                 .requires(source -> source.hasPermissionLevel(2))
                 .then(argument("player", EntityArgumentType.player())
                                 .executes(ctx -> {
@@ -21,8 +21,8 @@ public  class Fallfly {
     }
 
     private static int startFallfly(ServerCommandSource source, PlayerEntity player) {
-        player.startFallFlying();
-        source.sendFeedback(() ->Text.literal("Started fallflying"), false);
+        player.startGliding();
+        source.sendFeedback(() ->Text.literal("Started gliding"), false);
         return 1;
     }
 

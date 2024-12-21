@@ -8,6 +8,7 @@ import net.minecraft.command.argument.ItemStackArgument;
 import net.minecraft.command.argument.ItemStackArgumentType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 
@@ -31,9 +32,8 @@ public  class Cooldown {
                 ));
     }
 
-    private static int setCooldown(ServerCommandSource source, PlayerEntity player, ItemStackArgument  item, int duration) {
-        Item coolItem = item.getItem();
-        player.getItemCooldownManager().set(coolItem, duration);
+    private static int setCooldown(ServerCommandSource source, PlayerEntity player, ItemStackArgument item, int duration) {
+        player.getItemCooldownManager().set(item.getItem().getDefaultStack() ,duration);
         source.sendFeedback(() ->Text.literal("Set Cooldown to ")
                 .append(player.getDisplayName())
                 .append("'s ")

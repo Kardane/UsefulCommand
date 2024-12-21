@@ -22,12 +22,15 @@ public class UsefulCommand implements ModInitializer {
             PlayerAbility.register(dispatcher);
             Heal.register(dispatcher);
             Food.register(dispatcher);
-            Fallfly.register(dispatcher);
+            Glide.register(dispatcher);
             Cooldown.register(dispatcher,commandRegistryAccess);
             Explosion.register(dispatcher);
             MotionUpdate.register(dispatcher);
             camera.register(dispatcher);
             MouseItem.register(dispatcher);
+            DamageTilt.register(dispatcher);
+            Ptime.register(dispatcher);
+            Timeflow.register(dispatcher);
         });
         ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->
         {

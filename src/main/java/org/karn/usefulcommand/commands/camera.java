@@ -2,6 +2,7 @@ package org.karn.usefulcommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.BoolArgumentType;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.command.ServerCommandSource;
@@ -23,8 +24,8 @@ public class camera {
                 ));
     }
 
-    private static int camerSet(ServerCommandSource source, Entity entity) {
-        ServerPlayerEntity player = source.getPlayer();
+    private static int camerSet(ServerCommandSource source, Entity entity) throws CommandSyntaxException {
+        ServerPlayerEntity player = source.getPlayerOrThrow();
         player.setCameraEntity(entity);
         return 1;
     }

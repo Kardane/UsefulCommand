@@ -27,7 +27,7 @@ public  class Gravity {
     private static int gravityChange(ServerCommandSource source, Entity entity, boolean status) {
         entity.setNoGravity(status);
         source.sendFeedback(() ->Text.literal("NoGravity: ").append(String.valueOf(status)), false);
-        return 1;
+        return entity.hasNoGravity() ? 1 : 0;
     }
 
 }

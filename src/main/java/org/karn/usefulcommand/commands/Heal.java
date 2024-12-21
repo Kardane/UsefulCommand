@@ -15,7 +15,7 @@ public  class Heal {
         dispatcher.register(literal("heal")
                 .requires(source -> source.hasPermissionLevel(2))
                 .then(argument("entity", EntityArgumentType.entity())
-                        .then(argument("amount", FloatArgumentType.floatArg(0.001F))
+                        .then(argument("amount", FloatArgumentType.floatArg(0F))
                                 .executes(ctx -> {
                                     return setheal(ctx.getSource(), (LivingEntity) EntityArgumentType.getEntity(ctx,"entity"), ctx.getArgument("amount", Float.class));
                                 })
@@ -26,7 +26,7 @@ public  class Heal {
     private static int setheal(ServerCommandSource source, LivingEntity entity, float healamount) {
         entity.heal(healamount);
         source.sendFeedback(() ->Text.literal("Healed: ").append(String.valueOf(healamount)), false);
-        return 1;
+        return (int) entity.getHealth();
     }
 
 }
