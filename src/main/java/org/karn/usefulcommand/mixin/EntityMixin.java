@@ -49,7 +49,7 @@ public abstract class EntityMixin {
             ((ServerPlayerEntity)entity).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(entity));
         }
     }
-
+    /*
     @WrapOperation(
             method = "startRiding(Lnet/minecraft/entity/Entity;Z)Z",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/EntityType;isSaveable()Z")
@@ -60,5 +60,5 @@ public abstract class EntityMixin {
         }else{
             return original.call(instance);
         }
-    }
+    }*/
 }
