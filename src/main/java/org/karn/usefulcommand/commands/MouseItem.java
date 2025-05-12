@@ -25,17 +25,17 @@ public class MouseItem {
                         )
                         .then(CommandManager.literal("get")
                                 .executes(ctx -> {
-                                    ctx.getSource().sendFeedback(() -> Text.literal("Selected Slot: ").append(String.valueOf(ctx.getSource().getPlayer().getInventory().selectedSlot)), false);
-                                    return ctx.getSource().getPlayer().getInventory().selectedSlot;
+                                    ctx.getSource().sendFeedback(() -> Text.literal("Selected Slot: ").append(String.valueOf(ctx.getSource().getPlayer().getInventory().getSelectedSlot())), false);
+                                    return ctx.getSource().getPlayer().getInventory().getSelectedSlot();
                                 })
                         )
                 ));
     }
 
     private static int hotbarSet(ServerCommandSource source, ServerPlayerEntity player, int slot) {
-        player.getInventory().selectedSlot = slot;
+        player.getInventory().setSelectedSlot(slot);
         source.getServer().getPlayerManager().sendPlayerStatus(player);
-        source.sendFeedback(() -> Text.literal("Selected Slot: ").append(String.valueOf(player.getInventory().selectedSlot)), false);
-        return player.getInventory().selectedSlot;
+        source.sendFeedback(() -> Text.literal("Selected Slot: ").append(String.valueOf(player.getInventory().getSelectedSlot())), false);
+        return player.getInventory().getSelectedSlot();
     }
 }
