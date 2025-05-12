@@ -30,7 +30,8 @@ public class UsefulCommand implements ModInitializer {
             MouseItem.register(dispatcher);
             DamageTilt.register(dispatcher);
             Ptime.register(dispatcher);
-            Timeflow.register(dispatcher);
+            Rotate.register(dispatcher);
+            //Timeflow.register(dispatcher);
         });
 
         ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->

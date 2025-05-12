@@ -45,7 +45,7 @@ public  class Absorption {
     }
 
     private static int setAbsorption(ServerCommandSource source, LivingEntity entity, float amount, boolean override) {
-        entity.getAttributes().getCustomInstance(EntityAttributes.MAX_ABSORPTION).setBaseValue(amount);
+        //entity.getAttributes().getCustomInstance(EntityAttributes.MAX_ABSORPTION).setBaseValue(amount);
         if(override){
             entity.setAbsorptionAmount(amount);
         } else {
