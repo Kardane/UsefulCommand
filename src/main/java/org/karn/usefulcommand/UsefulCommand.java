@@ -32,6 +32,7 @@ public class UsefulCommand implements ModInitializer {
             Ptime.register(dispatcher);
             Timeflow.register(dispatcher);
         });
+
         ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->
         {
             if(handler.player.hasVehicle() && handler.player.getVehicle() instanceof PlayerEntity)

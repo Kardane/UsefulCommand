@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(RideCommand.class)
 public class RideCommandMixin {
     @Redirect(method = "executeMount", at = @At(value = "INVOKE",target = "Lnet/minecraft/entity/Entity;getType()Lnet/minecraft/entity/EntityType;"))
-    private static EntityType redirectGetType(Entity vehicle) {
+    private static EntityType redirectGetType$karnscmd(Entity vehicle) {
         return null;
     }
 }

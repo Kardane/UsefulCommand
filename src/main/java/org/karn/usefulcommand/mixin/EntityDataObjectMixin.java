@@ -20,7 +20,7 @@ public class EntityDataObjectMixin {
     private Entity entity;
 
     @Inject(method="setNbt", at=@At("HEAD"), cancellable = true)
-    void setNbt$karnsusefulcommand(NbtCompound nbt, CallbackInfo ci){
+    void setNbt$karnscmd(NbtCompound nbt, CallbackInfo ci){
         if (this.entity instanceof PlayerEntity){
             UUID uUID = this.entity.getUuid();
             this.entity.readNbt(nbt);

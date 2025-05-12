@@ -4,12 +4,11 @@
   "version": "${version}",
   "name": "karnsusefulcommand",
   "description": "",
-  "authors": [],
+  "authors": ["Karn"],
   "contact": {
-    "repo": "https://github.com/Admin/usefulcommand"
+    "repo": "https://github.com/Kardane/UsefulCommand"
   },
   "license": "All-Rights-Reserved",
-  "icon": "assets/usefulCommand/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [

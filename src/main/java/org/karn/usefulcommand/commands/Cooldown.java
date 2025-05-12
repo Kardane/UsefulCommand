@@ -38,7 +38,7 @@ public  class Cooldown {
                 .append(player.getDisplayName())
                 .append("'s ")
                 .append(item.getItem().getName())
-                .append("for "+duration+"ticks"), false);
+                .append("for "+duration+" ticks"), false);
         return duration;
     }
 

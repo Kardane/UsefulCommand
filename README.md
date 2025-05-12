@@ -27,3 +27,4 @@ useful command for datapack/command makes in Minecraft
 `/motionupdate (대상)` 대상의 Motion값을 업데이트시킵니다. `/data merge`로 플레이어의 Motion값을 변경시키고 연이어 사용하세요.
 
 `/explosion (위치) (위력) (폭발시킨 대상) (화염) (폭발종류)` 특정위치에 폭발을 일으킵니다.
+
