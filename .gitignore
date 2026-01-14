@@ -8,4 +8,5 @@ out
 gen
 run
 build
-
+.gradle
+build_error.log
