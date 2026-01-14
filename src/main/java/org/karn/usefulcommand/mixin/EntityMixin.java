@@ -23,7 +23,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin {
-    @Shadow
     public abstract World getWorld();
     @Final
     private Entity entity = (Entity) (Object) this;
@@ -31,10 +30,10 @@ public abstract class EntityMixin {
     @Inject(method = "removePassenger", at = @At("TAIL"))
     private void removePassengeForcer$karnscmd(Entity passenger, CallbackInfo callbackInfo)
     {
-        if(!passenger.getWorld().isClient && passenger instanceof PlayerEntity){
+        if(!passenger.getEntityWorld().isClient() && passenger instanceof PlayerEntity){
             ((ServerPlayerEntity)passenger).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(passenger));
         }
-        if(!passenger.getWorld().isClient && entity instanceof PlayerEntity){
+        if(!passenger.getEntityWorld().isClient() && entity instanceof PlayerEntity){
             ((ServerPlayerEntity)entity).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(entity));
         }
     }
@@ -42,16 +41,16 @@ public abstract class EntityMixin {
     @Inject(method = "addPassenger", at = @At("TAIL"))
     private void addPassengerForce$karnscmd(Entity passenger, CallbackInfo ci)
     {
-        if(!passenger.getWorld().isClient && passenger instanceof PlayerEntity){
+        if(!passenger.getEntityWorld().isClient() && passenger instanceof PlayerEntity){
             ((ServerPlayerEntity)passenger).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(passenger));
         }
-        if(!passenger.getWorld().isClient && entity instanceof PlayerEntity){
+        if(!passenger.getEntityWorld().isClient() && entity instanceof PlayerEntity){
             ((ServerPlayerEntity)entity).networkHandler.sendPacket(new EntityPassengersSetS2CPacket(entity));
         }
     }
 
     @WrapOperation(
-            method = "startRiding(Lnet/minecraft/entity/Entity;Z)Z",
+            method = "startRiding(Lnet/minecraft/entity/Entity;ZZ)Z",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/EntityType;isSaveable()Z")
     )
     private boolean playerladder$allowRidingPlayers(EntityType instance, Operation<Boolean> original) {

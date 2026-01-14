@@ -12,21 +12,20 @@ import net.minecraft.text.Text;
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;
 
-public class camera {
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        dispatcher.register(literal("cameraset")
-                .requires(source -> source.hasPermissionLevel(2))
-                .then(argument("entity", EntityArgumentType.entity())
-                        .executes(ctx -> {
-                            camerSet(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"));
-                            return 1;
-                        })
-                ));
-    }
+public class Camera {
+	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+		dispatcher.register(literal("cameraset")
+				.requires(source -> source.hasPermissionLevel(2))
+				.then(argument("entity", EntityArgumentType.entity())
+						.executes(ctx -> {
+							camerSet(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"));
+							return 1;
+						})));
+	}
 
-    private static int camerSet(ServerCommandSource source, Entity entity) throws CommandSyntaxException {
-        ServerPlayerEntity player = source.getPlayerOrThrow();
-        player.setCameraEntity(entity);
-        return 1;
-    }
+	private static int camerSet(ServerCommandSource source, Entity entity) throws CommandSyntaxException {
+		ServerPlayerEntity player = source.getPlayerOrThrow();
+		player.setCameraEntity(entity);
+		return 1;
+	}
 }

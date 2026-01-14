@@ -4,7 +4,6 @@
   "package": "org.karn.usefulcommand.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "EntityDataObjectMixin",
     "EntityMixin",
     "RideCommandMixin",
     "ServerPlayerEntityMixin"
