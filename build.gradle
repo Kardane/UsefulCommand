@@ -1,7 +1,10 @@
 plugins {
     id 'fabric-loom' version '1.13.+'
     id 'maven-publish'
+    id "com.modrinth.minotaur" version "2.8.10"
 }
+
+import com.modrinth.minotaur.TaskModrinthUpload
 
 version = project.mod_version
 group = project.maven_group
@@ -82,4 +85,15 @@ publishing {
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
     }
+}
+
+modrinth {
+    token = System.getenv("MODRINTH_TOKEN") // This is the default. Remember to have the MODRINTH_TOKEN environment variable set or else this will fail, or even better, use a secret library of some sort to keep it out of your source code.
+    projectId = "karns-useful-command" // This can be the project ID or the slug. Either will work!
+    versionNumber = project.mod_version // You don't need to set this, as it will default to your project's version.
+    versionType = "release" // This is the default. Can also be `beta` or `alpha`.
+    uploadFile = remapJar // With Loom, this should default to `remapJar`
+    gameVersions = [project.minecraft_version] // Must be an array, even with only one version
+    loaders = ["fabric"] // Must also be an array!
+    changelog = "UsefulCommand v${project.mod_version} for Minecraft ${project.minecraft_version}"
 }
