@@ -1,5 +1,7 @@
 package org.karn.usefulcommand.commands;
 
+import me.lucko.fabric.api.permissions.v0.Permissions;
+
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.FloatArgumentType;
@@ -15,7 +17,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public  class PlayerAbility {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("player_ability")
-                .requires(source -> source.hasPermissionLevel(2))
+                .requires(Permissions.require("usefulcommand.admin", 2))
                 .then(argument("player", EntityArgumentType.player())
                 .then(CommandManager.literal("fly")
                         .then(argument("on/off", BoolArgumentType.bool())
@@ -88,3 +90,4 @@ public  class PlayerAbility {
         return 1;
     }
 }
+

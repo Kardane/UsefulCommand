@@ -1,0 +1,746 @@
+
+> Configure project :
+Fabric Loom: 1.13.6
+
+> Task :exportClasspath UP-TO-DATE
+
+> Task :compileJava
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:7: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.EntityArgumentType;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:8: error: package net.minecraft.entity does not exist
+import net.minecraft.entity.EquipmentSlot;
+                           ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:9: error: package net.minecraft.entity does not exist
+import net.minecraft.entity.LivingEntity;
+                           ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:10: error: package net.minecraft.entity.attribute does not exist
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:11: error: package net.minecraft.entity.attribute does not exist
+import net.minecraft.entity.attribute.EntityAttributes;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:12: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.CommandManager;
+                                   ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:13: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.ServerCommandSource;
+                                   ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:14: error: package net.minecraft.text does not exist
+import net.minecraft.text.Text;
+                         ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:16: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.argument;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:16: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.argument;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:17: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.literal;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:17: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.literal;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:20: error: cannot find symbol
+    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+                                                  ^
+  symbol:   class ServerCommandSource
+  location: class Absorption
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:46: error: cannot find symbol
+    private static int getAbsorption(ServerCommandSource source, LivingEntity entity) {
+                                     ^
+  symbol:   class ServerCommandSource
+  location: class Absorption
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:46: error: cannot find symbol
+    private static int getAbsorption(ServerCommandSource source, LivingEntity entity) {
+                                                                 ^
+  symbol:   class LivingEntity
+  location: class Absorption
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:51: error: cannot find symbol
+    private static int setAbsorption(ServerCommandSource source, LivingEntity entity, float amount, boolean override) {
+                                     ^
+  symbol:   class ServerCommandSource
+  location: class Absorption
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:51: error: cannot find symbol
+    private static int setAbsorption(ServerCommandSource source, LivingEntity entity, float amount, boolean override) {
+                                                                 ^
+  symbol:   class LivingEntity
+  location: class Absorption
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:8: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.EntityArgumentType;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:9: error: package net.minecraft.entity does not exist
+import net.minecraft.entity.Entity;
+                           ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:10: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.ServerCommandSource;
+                                   ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:11: error: cannot find symbol
+import net.minecraft.server.network.ServerPlayerEntity;
+                                   ^
+  symbol:   class ServerPlayerEntity
+  location: package net.minecraft.server.network
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:12: error: package net.minecraft.text does not exist
+import net.minecraft.text.Text;
+                         ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:14: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.argument;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:14: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.argument;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:15: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.literal;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:15: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.literal;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:18: error: cannot find symbol
+	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+	                                              ^
+  symbol:   class ServerCommandSource
+  location: class Camera
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:28: error: cannot find symbol
+	private static int camerSet(ServerCommandSource source, Entity entity) throws CommandSyntaxException {
+	                            ^
+  symbol:   class ServerCommandSource
+  location: class Camera
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:28: error: cannot find symbol
+	private static int camerSet(ServerCommandSource source, Entity entity) throws CommandSyntaxException {
+	                                                        ^
+  symbol:   class Entity
+  location: class Camera
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:7: error: package net.minecraft.command does not exist
+import net.minecraft.command.CommandRegistryAccess;
+                            ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:8: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.EntityArgumentType;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:9: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.ItemStackArgument;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:10: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.ItemStackArgumentType;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:11: error: package net.minecraft.entity.player does not exist
+import net.minecraft.entity.player.PlayerEntity;
+                                  ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:12: error: package net.minecraft.item does not exist
+import net.minecraft.item.Item;
+                         ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:13: error: package net.minecraft.item does not exist
+import net.minecraft.item.ItemStack;
+                         ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:14: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.ServerCommandSource;
+                                   ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:15: error: package net.minecraft.text does not exist
+import net.minecraft.text.Text;
+                         ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:17: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.argument;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:17: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.argument;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:18: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.literal;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:18: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.literal;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:23: error: cannot find symbol
+    public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess commandRegistryAccess) {
+                                                  ^
+  symbol:   class ServerCommandSource
+  location: class Cooldown
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:23: error: cannot find symbol
+    public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess commandRegistryAccess) {
+                                                                                   ^
+  symbol:   class CommandRegistryAccess
+  location: class Cooldown
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:37: error: cannot find symbol
+    private static int setCooldown(ServerCommandSource source, PlayerEntity player, ItemStackArgument item, int duration) {
+                                   ^
+  symbol:   class ServerCommandSource
+  location: class Cooldown
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:37: error: cannot find symbol
+    private static int setCooldown(ServerCommandSource source, PlayerEntity player, ItemStackArgument item, int duration) {
+                                                               ^
+  symbol:   class PlayerEntity
+  location: class Cooldown
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:37: error: cannot find symbol
+    private static int setCooldown(ServerCommandSource source, PlayerEntity player, ItemStackArgument item, int duration) {
+                                                                                    ^
+  symbol:   class ItemStackArgument
+  location: class Cooldown
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:8: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.EntityArgumentType;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:9: error: package net.minecraft.entity does not exist
+import net.minecraft.entity.Entity;
+                           ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:10: error: package net.minecraft.entity.player does not exist
+import net.minecraft.entity.player.PlayerEntity;
+                                  ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:11: error: package net.minecraft.network.packet.s2c.play does not exist
+import net.minecraft.network.packet.s2c.play.DamageTiltS2CPacket;
+                                            ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:12: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.CommandManager;
+                                   ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:13: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.ServerCommandSource;
+                                   ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:14: error: cannot find symbol
+import net.minecraft.server.network.ServerPlayerEntity;
+                                   ^
+  symbol:   class ServerPlayerEntity
+  location: package net.minecraft.server.network
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:15: error: package net.minecraft.text does not exist
+import net.minecraft.text.Text;
+                         ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:17: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.argument;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:17: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.argument;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:18: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.literal;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:18: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.literal;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:21: error: cannot find symbol
+    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+                                                  ^
+  symbol:   class ServerCommandSource
+  location: class DamageTilt
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:33: error: cannot find symbol
+    private static int tilt(ServerCommandSource source, PlayerEntity entity, float angle) {
+                            ^
+  symbol:   class ServerCommandSource
+  location: class DamageTilt
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:33: error: cannot find symbol
+    private static int tilt(ServerCommandSource source, PlayerEntity entity, float angle) {
+                                                        ^
+  symbol:   class PlayerEntity
+  location: class DamageTilt
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:9: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.BlockPosArgumentType;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:10: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.EntityArgumentType;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:11: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.PosArgument;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:12: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.Vec3ArgumentType;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:13: error: package net.minecraft.entity does not exist
+import net.minecraft.entity.Entity;
+                           ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:14: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.CommandManager;
+                                   ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:15: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.ServerCommandSource;
+                                   ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:16: error: package net.minecraft.text does not exist
+import net.minecraft.text.Text;
+                         ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:17: error: package net.minecraft.util.math does not exist
+import net.minecraft.util.math.BlockPos;
+                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:18: error: package net.minecraft.util.math does not exist
+import net.minecraft.util.math.Vec3d;
+                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:19: error: cannot find symbol
+import net.minecraft.world.World;
+                          ^
+  symbol:   class World
+  location: package net.minecraft.world
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:21: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.argument;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:21: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.argument;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:22: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.literal;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:22: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.literal;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:25: error: cannot find symbol
+    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+                                                  ^
+  symbol:   class ServerCommandSource
+  location: class Explosion
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:66: error: cannot find symbol
+    private static int explode(ServerCommandSource source, Entity entity, Vec3d pos, float power, boolean createFire, World.ExplosionSourceType sourceType) {
+                               ^
+  symbol:   class ServerCommandSource
+  location: class Explosion
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:66: error: cannot find symbol
+    private static int explode(ServerCommandSource source, Entity entity, Vec3d pos, float power, boolean createFire, World.ExplosionSourceType sourceType) {
+                                                           ^
+  symbol:   class Entity
+  location: class Explosion
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:66: error: cannot find symbol
+    private static int explode(ServerCommandSource source, Entity entity, Vec3d pos, float power, boolean createFire, World.ExplosionSourceType sourceType) {
+                                                                          ^
+  symbol:   class Vec3d
+  location: class Explosion
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:66: error: package World does not exist
+    private static int explode(ServerCommandSource source, Entity entity, Vec3d pos, float power, boolean createFire, World.ExplosionSourceType sourceType) {
+                                                                                                                           ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:7: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.EntityArgumentType;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:8: error: package net.minecraft.entity does not exist
+import net.minecraft.entity.Entity;
+                           ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:9: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.CommandManager;
+                                   ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:10: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.ServerCommandSource;
+                                   ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:11: error: package net.minecraft.text does not exist
+import net.minecraft.text.Text;
+                         ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:13: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.argument;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:13: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.argument;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:14: error: package net.minecraft.server.command does not exist
+import static net.minecraft.server.command.CommandManager.literal;
+                                          ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:14: error: static import only from classes and interfaces
+import static net.minecraft.server.command.CommandManager.literal;
+^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:17: error: cannot find symbol
+    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+                                                  ^
+  symbol:   class ServerCommandSource
+  location: class Fire
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:43: error: cannot find symbol
+    private static int getFire(ServerCommandSource source, Entity entity) {
+                               ^
+  symbol:   class ServerCommandSource
+  location: class Fire
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:43: error: cannot find symbol
+    private static int getFire(ServerCommandSource source, Entity entity) {
+                                                           ^
+  symbol:   class Entity
+  location: class Fire
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:48: error: cannot find symbol
+    private static int setFire(ServerCommandSource source, Entity entity, int duration, boolean override) {
+                               ^
+  symbol:   class ServerCommandSource
+  location: class Fire
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:48: error: cannot find symbol
+    private static int setFire(ServerCommandSource source, Entity entity, int duration, boolean override) {
+                                                           ^
+  symbol:   class Entity
+  location: class Fire
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:8: error: package net.minecraft.command.argument does not exist
+import net.minecraft.command.argument.EntityArgumentType;
+                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:9: error: package net.minecraft.entity.player does not exist
+import net.minecraft.entity.player.PlayerEntity;
+                                  ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:10: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.CommandManager;
+                                   ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:11: error: package net.minecraft.server.command does not exist
+import net.minecraft.server.command.ServerCommandSource;
+                                   ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+100 errors
+
+> Task :compileJava FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/parkj/IdeaProjects/UsefulCommand/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:16: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.argument;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:17: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.literal;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:14: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.argument;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:15: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.literal;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:17: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.argument;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:18: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.literal;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:17: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.argument;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:18: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.literal;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:21: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.argument;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:22: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.literal;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:13: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.argument;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:14: error: static import only from classes and interfaces
+  import static net.minecraft.server.command.CommandManager.literal;
+  ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:20: error: cannot find symbol
+      public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+                                                    ^
+    symbol:   class ServerCommandSource
+    location: class Absorption
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:46: error: cannot find symbol
+      private static int getAbsorption(ServerCommandSource source, LivingEntity entity) {
+                                       ^
+    symbol:   class ServerCommandSource
+    location: class Absorption
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:46: error: cannot find symbol
+      private static int getAbsorption(ServerCommandSource source, LivingEntity entity) {
+                                                                   ^
+    symbol:   class LivingEntity
+    location: class Absorption
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:51: error: cannot find symbol
+      private static int setAbsorption(ServerCommandSource source, LivingEntity entity, float amount, boolean override) {
+                                       ^
+    symbol:   class ServerCommandSource
+    location: class Absorption
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:51: error: cannot find symbol
+      private static int setAbsorption(ServerCommandSource source, LivingEntity entity, float amount, boolean override) {
+                                                                   ^
+    symbol:   class LivingEntity
+    location: class Absorption
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:11: error: cannot find symbol
+  import net.minecraft.server.network.ServerPlayerEntity;
+                                     ^
+    symbol:   class ServerPlayerEntity
+    location: package net.minecraft.server.network
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:18: error: cannot find symbol
+  	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+  	                                              ^
+    symbol:   class ServerCommandSource
+    location: class Camera
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:28: error: cannot find symbol
+  	private static int camerSet(ServerCommandSource source, Entity entity) throws CommandSyntaxException {
+  	                            ^
+    symbol:   class ServerCommandSource
+    location: class Camera
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:28: error: cannot find symbol
+  	private static int camerSet(ServerCommandSource source, Entity entity) throws CommandSyntaxException {
+  	                                                        ^
+    symbol:   class Entity
+    location: class Camera
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:23: error: cannot find symbol
+      public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess commandRegistryAccess) {
+                                                    ^
+    symbol:   class ServerCommandSource
+    location: class Cooldown
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:23: error: cannot find symbol
+      public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess commandRegistryAccess) {
+                                                                                     ^
+    symbol:   class CommandRegistryAccess
+    location: class Cooldown
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:37: error: cannot find symbol
+      private static int setCooldown(ServerCommandSource source, PlayerEntity player, ItemStackArgument item, int duration) {
+                                     ^
+    symbol:   class ServerCommandSource
+    location: class Cooldown
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:37: error: cannot find symbol
+      private static int setCooldown(ServerCommandSource source, PlayerEntity player, ItemStackArgument item, int duration) {
+                                                                 ^
+    symbol:   class PlayerEntity
+    location: class Cooldown
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:37: error: cannot find symbol
+      private static int setCooldown(ServerCommandSource source, PlayerEntity player, ItemStackArgument item, int duration) {
+                                                                                      ^
+    symbol:   class ItemStackArgument
+    location: class Cooldown
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:14: error: cannot find symbol
+  import net.minecraft.server.network.ServerPlayerEntity;
+                                     ^
+    symbol:   class ServerPlayerEntity
+    location: package net.minecraft.server.network
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:21: error: cannot find symbol
+      public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+                                                    ^
+    symbol:   class ServerCommandSource
+    location: class DamageTilt
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:33: error: cannot find symbol
+      private static int tilt(ServerCommandSource source, PlayerEntity entity, float angle) {
+                              ^
+    symbol:   class ServerCommandSource
+    location: class DamageTilt
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:33: error: cannot find symbol
+      private static int tilt(ServerCommandSource source, PlayerEntity entity, float angle) {
+                                                          ^
+    symbol:   class PlayerEntity
+    location: class DamageTilt
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:19: error: cannot find symbol
+  import net.minecraft.world.World;
+                            ^
+    symbol:   class World
+    location: package net.minecraft.world
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:25: error: cannot find symbol
+      public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+                                                    ^
+    symbol:   class ServerCommandSource
+    location: class Explosion
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:66: error: cannot find symbol
+      private static int explode(ServerCommandSource source, Entity entity, Vec3d pos, float power, boolean createFire, World.ExplosionSourceType sourceType) {
+                                 ^
+    symbol:   class ServerCommandSource
+    location: class Explosion
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:66: error: cannot find symbol
+      private static int explode(ServerCommandSource source, Entity entity, Vec3d pos, float power, boolean createFire, World.ExplosionSourceType sourceType) {
+                                                             ^
+    symbol:   class Entity
+    location: class Explosion
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:66: error: cannot find symbol
+      private static int explode(ServerCommandSource source, Entity entity, Vec3d pos, float power, boolean createFire, World.ExplosionSourceType sourceType) {
+                                                                            ^
+    symbol:   class Vec3d
+    location: class Explosion
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:17: error: cannot find symbol
+      public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+                                                    ^
+    symbol:   class ServerCommandSource
+    location: class Fire
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:43: error: cannot find symbol
+      private static int getFire(ServerCommandSource source, Entity entity) {
+                                 ^
+    symbol:   class ServerCommandSource
+    location: class Fire
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:43: error: cannot find symbol
+      private static int getFire(ServerCommandSource source, Entity entity) {
+                                                             ^
+    symbol:   class Entity
+    location: class Fire
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:48: error: cannot find symbol
+      private static int setFire(ServerCommandSource source, Entity entity, int duration, boolean override) {
+                                 ^
+    symbol:   class ServerCommandSource
+    location: class Fire
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:48: error: cannot find symbol
+      private static int setFire(ServerCommandSource source, Entity entity, int duration, boolean override) {
+                                                             ^
+    symbol:   class Entity
+    location: class Fire
+  Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:7: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.EntityArgumentType;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:8: error: package net.minecraft.entity does not exist
+  import net.minecraft.entity.EquipmentSlot;
+                             ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:9: error: package net.minecraft.entity does not exist
+  import net.minecraft.entity.LivingEntity;
+                             ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:10: error: package net.minecraft.entity.attribute does not exist
+  import net.minecraft.entity.attribute.EntityAttributeModifier;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:11: error: package net.minecraft.entity.attribute does not exist
+  import net.minecraft.entity.attribute.EntityAttributes;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:12: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.CommandManager;
+                                     ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:13: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.ServerCommandSource;
+                                     ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:14: error: package net.minecraft.text does not exist
+  import net.minecraft.text.Text;
+                           ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:16: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.argument;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:17: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.literal;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:8: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.EntityArgumentType;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:9: error: package net.minecraft.entity does not exist
+  import net.minecraft.entity.Entity;
+                             ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:10: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.ServerCommandSource;
+                                     ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:12: error: package net.minecraft.text does not exist
+  import net.minecraft.text.Text;
+                           ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:14: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.argument;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:15: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.literal;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:7: error: package net.minecraft.command does not exist
+  import net.minecraft.command.CommandRegistryAccess;
+                              ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:8: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.EntityArgumentType;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:9: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.ItemStackArgument;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:10: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.ItemStackArgumentType;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:11: error: package net.minecraft.entity.player does not exist
+  import net.minecraft.entity.player.PlayerEntity;
+                                    ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:12: error: package net.minecraft.item does not exist
+  import net.minecraft.item.Item;
+                           ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:13: error: package net.minecraft.item does not exist
+  import net.minecraft.item.ItemStack;
+                           ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:14: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.ServerCommandSource;
+                                     ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:15: error: package net.minecraft.text does not exist
+  import net.minecraft.text.Text;
+                           ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:17: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.argument;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:18: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.literal;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:8: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.EntityArgumentType;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:9: error: package net.minecraft.entity does not exist
+  import net.minecraft.entity.Entity;
+                             ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:10: error: package net.minecraft.entity.player does not exist
+  import net.minecraft.entity.player.PlayerEntity;
+                                    ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:11: error: package net.minecraft.network.packet.s2c.play does not exist
+  import net.minecraft.network.packet.s2c.play.DamageTiltS2CPacket;
+                                              ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:12: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.CommandManager;
+                                     ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:13: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.ServerCommandSource;
+                                     ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:15: error: package net.minecraft.text does not exist
+  import net.minecraft.text.Text;
+                           ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:17: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.argument;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:18: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.literal;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:9: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.BlockPosArgumentType;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:10: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.EntityArgumentType;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:11: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.PosArgument;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:12: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.Vec3ArgumentType;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:13: error: package net.minecraft.entity does not exist
+  import net.minecraft.entity.Entity;
+                             ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:14: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.CommandManager;
+                                     ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:15: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.ServerCommandSource;
+                                     ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:16: error: package net.minecraft.text does not exist
+  import net.minecraft.text.Text;
+                           ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:17: error: package net.minecraft.util.math does not exist
+  import net.minecraft.util.math.BlockPos;
+                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:18: error: package net.minecraft.util.math does not exist
+  import net.minecraft.util.math.Vec3d;
+                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:21: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.argument;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:22: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.literal;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:66: error: package World does not exist
+      private static int explode(ServerCommandSource source, Entity entity, Vec3d pos, float power, boolean createFire, World.ExplosionSourceType sourceType) {
+                                                                                                                             ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:7: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.EntityArgumentType;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:8: error: package net.minecraft.entity does not exist
+  import net.minecraft.entity.Entity;
+                             ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:9: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.CommandManager;
+                                     ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:10: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.ServerCommandSource;
+                                     ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:11: error: package net.minecraft.text does not exist
+  import net.minecraft.text.Text;
+                           ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:13: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.argument;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:14: error: package net.minecraft.server.command does not exist
+  import static net.minecraft.server.command.CommandManager.literal;
+                                            ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:8: error: package net.minecraft.command.argument does not exist
+  import net.minecraft.command.argument.EntityArgumentType;
+                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:9: error: package net.minecraft.entity.player does not exist
+  import net.minecraft.entity.player.PlayerEntity;
+                                    ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:10: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.CommandManager;
+                                     ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:11: error: package net.minecraft.server.command does not exist
+  import net.minecraft.server.command.ServerCommandSource;
+                                     ^
+  100 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 7s
+2 actionable tasks: 1 executed, 1 up-to-date

@@ -1,0 +1,240 @@
+
+> Configure project :
+Fabric Loom: 1.13.6
+
+> Task :exportClasspath UP-TO-DATE
+
+> Task :compileJava
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:22: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:39: error: incompatible types: Float cannot be converted to float
+                                      return setAbsorption(ctx.getSource(), (LivingEntity) EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("amount", Float.class), false);
+                                                                                                                                                       ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:20: error: incompatible types: int cannot be converted to String
+				.requires(Permissions.require(2))
+				                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:25: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:30: error: incompatible types: Integer cannot be converted to int
+                                            return setCooldown(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), ItemStackArgumentType.getItemStackArgument(ctx, "item"), ctx.getArgument("cooldown", Integer.class));
+                                                                                                                                                                                                    ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:23: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:27: error: incompatible types: Float cannot be converted to float
+                                    return tilt(ctx.getSource(), EntityArgumentType.getPlayer(ctx, "player"), ctx.getArgument("angle", Float.class));
+                                                                                                                             ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:27: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:19: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:36: error: incompatible types: Integer cannot be converted to int
+                                      return setFire(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), false);
+                                                                                                                                  ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:20: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:59: error: incompatible types: Float cannot be converted to float
+                                                    return setSaturation(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), ctx.getArgument("amount", Float.class), false);
+                                                                                                                                                     ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Freeze.java:19: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Freeze.java:36: error: incompatible types: Integer cannot be converted to int
+                                      return setFreeze(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), false);
+                                                                                                                                    ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Glide.java:17: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Gravity.java:19: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Heal.java:19: error: incompatible types: int cannot be converted to String
+				.requires(Permissions.require(2))
+				                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Invulnerable.java:19: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:20: error: incompatible types: int cannot be converted to String
+				.requires(Permissions.require(2))
+				                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:63: error: cannot find symbol
+			entity.velocityModified = true;
+			      ^
+  symbol:   variable velocityModified
+  location: variable entity of type Entity
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:71: error: cannot find symbol
+			entity.velocityModified = true;
+			      ^
+  symbol:   variable velocityModified
+  location: variable entity of type Entity
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:80: error: cannot find symbol
+			entity.velocityModified = true;
+			      ^
+  symbol:   variable velocityModified
+  location: variable entity of type Entity
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:89: error: cannot find symbol
+			entity.velocityModified = true;
+			      ^
+  symbol:   variable velocityModified
+  location: variable entity of type Entity
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MotionUpdate.java:18: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MotionUpdate.java:27: error: cannot find symbol
+        entity.velocityModified = true;
+              ^
+  symbol:   variable velocityModified
+  location: variable entity of type Entity
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MouseItem.java:19: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MouseItem.java:30: error: incompatible types: int cannot be converted to boolean
+                                    ctx.getSource().sendFeedback(() -> Text.literal("Selected Slot: ").append(String.valueOf(ctx.getSource().getPlayer().getInventory().getSelectedSlot())), false);
+                                                                                                                                                                                       ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\PlayerAbility.java:20: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Ptime.java:22: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Ptime.java:26: error: incompatible types: Integer cannot be converted to int
+                                    return setPtime(ctx.getSource(), EntityArgumentType.getPlayer(ctx, "player"), ctx.getArgument("time", Integer.class));
+                                                                                                                                 ^
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Timeflow.java:23: error: incompatible types: int cannot be converted to String
+                .requires(Permissions.require(2))
+                                              ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+31 errors
+
+> Task :compileJava FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/parkj/IdeaProjects/UsefulCommand/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:22: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:39: error: incompatible types: Float cannot be converted to float
+                                        return setAbsorption(ctx.getSource(), (LivingEntity) EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("amount", Float.class), false);
+                                                                                                                                                         ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:20: error: incompatible types: int cannot be converted to String
+  				.requires(Permissions.require(2))
+  				                              ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:25: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:30: error: incompatible types: Integer cannot be converted to int
+                                              return setCooldown(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), ItemStackArgumentType.getItemStackArgument(ctx, "item"), ctx.getArgument("cooldown", Integer.class));
+                                                                                                                                                                                                      ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:23: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:27: error: incompatible types: Float cannot be converted to float
+                                      return tilt(ctx.getSource(), EntityArgumentType.getPlayer(ctx, "player"), ctx.getArgument("angle", Float.class));
+                                                                                                                               ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:27: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:19: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:36: error: incompatible types: Integer cannot be converted to int
+                                        return setFire(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), false);
+                                                                                                                                    ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:20: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:59: error: incompatible types: Float cannot be converted to float
+                                                      return setSaturation(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"), ctx.getArgument("amount", Float.class), false);
+                                                                                                                                                       ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Freeze.java:19: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Freeze.java:36: error: incompatible types: Integer cannot be converted to int
+                                        return setFreeze(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), false);
+                                                                                                                                      ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Glide.java:17: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Gravity.java:19: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Heal.java:19: error: incompatible types: int cannot be converted to String
+  				.requires(Permissions.require(2))
+  				                              ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Invulnerable.java:19: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:20: error: incompatible types: int cannot be converted to String
+  				.requires(Permissions.require(2))
+  				                              ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MotionUpdate.java:18: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MouseItem.java:19: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MouseItem.java:30: error: incompatible types: int cannot be converted to boolean
+                                      ctx.getSource().sendFeedback(() -> Text.literal("Selected Slot: ").append(String.valueOf(ctx.getSource().getPlayer().getInventory().getSelectedSlot())), false);
+                                                                                                                                                                                         ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\PlayerAbility.java:20: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Ptime.java:22: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Ptime.java:26: error: incompatible types: Integer cannot be converted to int
+                                      return setPtime(ctx.getSource(), EntityArgumentType.getPlayer(ctx, "player"), ctx.getArgument("time", Integer.class));
+                                                                                                                                   ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Timeflow.java:23: error: incompatible types: int cannot be converted to String
+                  .requires(Permissions.require(2))
+                                                ^
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:63: error: cannot find symbol
+  			entity.velocityModified = true;
+  			      ^
+    symbol:   variable velocityModified
+    location: variable entity of type Entity
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:71: error: cannot find symbol
+  			entity.velocityModified = true;
+  			      ^
+    symbol:   variable velocityModified
+    location: variable entity of type Entity
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:80: error: cannot find symbol
+  			entity.velocityModified = true;
+  			      ^
+    symbol:   variable velocityModified
+    location: variable entity of type Entity
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:89: error: cannot find symbol
+  			entity.velocityModified = true;
+  			      ^
+    symbol:   variable velocityModified
+    location: variable entity of type Entity
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MotionUpdate.java:27: error: cannot find symbol
+          entity.velocityModified = true;
+                ^
+    symbol:   variable velocityModified
+    location: variable entity of type Entity
+  Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+  31 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 12s
+2 actionable tasks: 1 executed, 1 up-to-date

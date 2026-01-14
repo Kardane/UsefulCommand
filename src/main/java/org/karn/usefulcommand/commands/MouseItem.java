@@ -1,5 +1,7 @@
 package org.karn.usefulcommand.commands;
 
+import me.lucko.fabric.api.permissions.v0.Permissions;
+
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.minecraft.command.argument.EntityArgumentType;
@@ -14,7 +16,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public class MouseItem {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("hotbar")
-                .requires(source -> source.hasPermissionLevel(2))
+                .requires(Permissions.require("usefulcommand.admin", 2))
                 .then(argument("player", EntityArgumentType.player())
                         .then(CommandManager.literal("set")
                             .then(argument("num", IntegerArgumentType.integer(0,8))
@@ -39,3 +41,4 @@ public class MouseItem {
         return player.getInventory().getSelectedSlot();
     }
 }
+

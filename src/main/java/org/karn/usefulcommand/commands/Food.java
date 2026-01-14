@@ -1,5 +1,7 @@
 package org.karn.usefulcommand.commands;
 
+import me.lucko.fabric.api.permissions.v0.Permissions;
+
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.FloatArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
@@ -15,7 +17,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public  class Food {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("food")
-                .requires(source -> source.hasPermissionLevel(2))
+                .requires(Permissions.require("usefulcommand.admin", 2))
                 .then(argument("player", EntityArgumentType.player())
                         .then(CommandManager.literal("hunger")
                                 .then(CommandManager.literal("get")
@@ -93,3 +95,4 @@ public  class Food {
     }
 
 }
+

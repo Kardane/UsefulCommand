@@ -1,5 +1,7 @@
 package org.karn.usefulcommand.commands;
 
+import me.lucko.fabric.api.permissions.v0.Permissions;
+
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.minecraft.command.CommandRegistryAccess;
@@ -20,7 +22,7 @@ public  class Cooldown {
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess commandRegistryAccess) {
         dispatcher.register(literal("cooldown")
-                .requires(source -> source.hasPermissionLevel(2))
+                .requires(Permissions.require("usefulcommand.admin", 2))
                 .then(argument("player", EntityArgumentType.player())
                         .then(argument("item", ItemStackArgumentType.itemStack(commandRegistryAccess))
                                 .then(argument("cooldown", IntegerArgumentType.integer())
@@ -43,3 +45,4 @@ public  class Cooldown {
     }
 
 }
+

@@ -1,0 +1,263 @@
+
+> Configure project :
+Fabric Loom: 1.13.6
+The mappings (net.fabricmc:yarn:1.21.10+build.3) were not built for Minecraft version 1.21.11, proceed with caution.
+
+> Task :exportClasspath UP-TO-DATE
+
+> Task :compileJava
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:20: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:18: error: cannot find symbol
+				.requires(source -> source.hasPermissionLevel(2))
+				                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:23: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:21: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:25: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:17: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:18: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Freeze.java:17: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Glide.java:15: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Gravity.java:17: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Heal.java:17: error: cannot find symbol
+				.requires(source -> source.hasPermissionLevel(2))
+				                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Invulnerable.java:17: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:18: error: cannot find symbol
+				.requires(source -> source.hasPermissionLevel(2))
+				                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:61: error: cannot find symbol
+			entity.knockedBack = true;
+			      ^
+  symbol:   variable knockedBack
+  location: variable entity of type Entity
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:69: error: cannot find symbol
+			entity.knockedBack = true;
+			      ^
+  symbol:   variable knockedBack
+  location: variable entity of type Entity
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:78: error: cannot find symbol
+			entity.knockedBack = true;
+			      ^
+  symbol:   variable knockedBack
+  location: variable entity of type Entity
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:87: error: cannot find symbol
+			entity.knockedBack = true;
+			      ^
+  symbol:   variable knockedBack
+  location: variable entity of type Entity
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MotionUpdate.java:16: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MotionUpdate.java:25: error: cannot find symbol
+        entity.knockedBack = true;
+              ^
+  symbol:   variable knockedBack
+  location: variable entity of type Entity
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MouseItem.java:17: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\PlayerAbility.java:18: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Ptime.java:20: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Timeflow.java:21: error: cannot find symbol
+                .requires(source -> source.hasPermissionLevel(2))
+                                          ^
+  symbol:   method hasPermissionLevel(int)
+  location: variable source of type ServerCommandSource
+23 errors
+
+> Task :compileJava FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/parkj/IdeaProjects/UsefulCommand/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:61: error: cannot find symbol
+  			entity.knockedBack = true;
+  			      ^
+    symbol:   variable knockedBack
+    location: variable entity of type Entity
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:69: error: cannot find symbol
+  			entity.knockedBack = true;
+  			      ^
+    symbol:   variable knockedBack
+    location: variable entity of type Entity
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:78: error: cannot find symbol
+  			entity.knockedBack = true;
+  			      ^
+    symbol:   variable knockedBack
+    location: variable entity of type Entity
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:87: error: cannot find symbol
+  			entity.knockedBack = true;
+  			      ^
+    symbol:   variable knockedBack
+    location: variable entity of type Entity
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MotionUpdate.java:25: error: cannot find symbol
+          entity.knockedBack = true;
+                ^
+    symbol:   variable knockedBack
+    location: variable entity of type Entity
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Absorption.java:20: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Camera.java:18: error: cannot find symbol
+  				.requires(source -> source.hasPermissionLevel(2))
+  				                          ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Cooldown.java:23: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\DamageTilt.java:21: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Explosion.java:25: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Fire.java:17: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Food.java:18: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Freeze.java:17: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Glide.java:15: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Gravity.java:17: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Heal.java:17: error: cannot find symbol
+  				.requires(source -> source.hasPermissionLevel(2))
+  				                          ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Invulnerable.java:17: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Motion.java:18: error: cannot find symbol
+  				.requires(source -> source.hasPermissionLevel(2))
+  				                          ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MotionUpdate.java:16: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\MouseItem.java:17: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\PlayerAbility.java:18: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Ptime.java:20: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  C:\Users\parkj\IdeaProjects\UsefulCommand\src\main\java\org\karn\usefulcommand\commands\Timeflow.java:21: error: cannot find symbol
+                  .requires(source -> source.hasPermissionLevel(2))
+                                            ^
+    symbol:   method hasPermissionLevel(int)
+    location: variable source of type ServerCommandSource
+  23 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 9s
+2 actionable tasks: 1 executed, 1 up-to-date

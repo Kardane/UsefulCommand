@@ -1,5 +1,7 @@
 package org.karn.usefulcommand.commands;
 
+import me.lucko.fabric.api.permissions.v0.Permissions;
+
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,7 +14,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public  class Glide {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("glide")
-                .requires(source -> source.hasPermissionLevel(2))
+                .requires(Permissions.require("usefulcommand.admin", 2))
                 .then(argument("player", EntityArgumentType.player())
                                 .executes(ctx -> {
                                     return startFallfly(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"));
@@ -27,3 +29,4 @@ public  class Glide {
     }
 
 }
+

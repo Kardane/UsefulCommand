@@ -1,0 +1,47 @@
+
+> Configure project :
+Fabric Loom: 1.13.6
+Previous process has disowned the lock due to abrupt termination.
+Found existing cache lock file (ACQUIRED_PREVIOUS_OWNER_DISOWNED), rebuilding loom cache. This may have been caused by a failed or canceled build.
+
+[Incubating] Problems report is available at: file:///C:/Users/parkj/IdeaProjects/UsefulCommand/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'UsefulCommand'.
+> Could not resolve all files for configuration ':modImplementation'.
+   > Could not find me.lucko:fabric-permissions-api:0.3-SNAPSHOT.
+     Searched in the following locations:
+       - file:/C:/Users/parkj/IdeaProjects/UsefulCommand/.gradle/loom-cache/remapped_mods/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/maven-metadata.xml
+       - file:/C:/Users/parkj/IdeaProjects/UsefulCommand/.gradle/loom-cache/remapped_mods/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/fabric-permissions-api-0.3-SNAPSHOT.pom
+       - file:/C:/Users/parkj/.gradle/caches/fabric-loom/minecraftMaven/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/maven-metadata.xml
+       - file:/C:/Users/parkj/.gradle/caches/fabric-loom/minecraftMaven/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/fabric-permissions-api-0.3-SNAPSHOT.pom
+       - file:/C:/Users/parkj/IdeaProjects/UsefulCommand/.gradle/loom-cache/minecraftMaven/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/maven-metadata.xml
+       - file:/C:/Users/parkj/IdeaProjects/UsefulCommand/.gradle/loom-cache/minecraftMaven/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/fabric-permissions-api-0.3-SNAPSHOT.pom
+       - https://maven.fabricmc.net/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/maven-metadata.xml
+       - https://maven.fabricmc.net/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/fabric-permissions-api-0.3-SNAPSHOT.pom
+       - https://libraries.minecraft.net/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/maven-metadata.xml
+       - https://libraries.minecraft.net/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/fabric-permissions-api-0.3-SNAPSHOT.pom
+       - https://libraries.minecraft.net/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/fabric-permissions-api-0.3-SNAPSHOT.jar
+       - https://repo.maven.apache.org/maven2/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/fabric-permissions-api-0.3-SNAPSHOT.jar
+       - https://repo.maven.apache.org/maven2/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/maven-metadata.xml
+       - https://repo.maven.apache.org/maven2/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/fabric-permissions-api-0.3-SNAPSHOT.pom
+       - https://oss.sonatype.org/content/repositories/snapshots/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/maven-metadata.xml
+       - https://oss.sonatype.org/content/repositories/snapshots/me/lucko/fabric-permissions-api/0.3-SNAPSHOT/fabric-permissions-api-0.3-SNAPSHOT.pom
+     Required by:
+         root project :
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 40s

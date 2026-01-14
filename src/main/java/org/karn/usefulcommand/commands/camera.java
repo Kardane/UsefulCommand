@@ -1,5 +1,7 @@
 package org.karn.usefulcommand.commands;
 
+import me.lucko.fabric.api.permissions.v0.Permissions;
+
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
@@ -15,7 +17,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public class Camera {
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
 		dispatcher.register(literal("cameraset")
-				.requires(source -> source.hasPermissionLevel(2))
+				.requires(Permissions.require("usefulcommand.admin", 2))
 				.then(argument("entity", EntityArgumentType.entity())
 						.executes(ctx -> {
 							camerSet(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"));
@@ -29,3 +31,4 @@ public class Camera {
 		return 1;
 	}
 }
+

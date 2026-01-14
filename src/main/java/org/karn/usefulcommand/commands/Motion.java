@@ -1,5 +1,7 @@
 package org.karn.usefulcommand.commands;
 
+import me.lucko.fabric.api.permissions.v0.Permissions;
+
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.mojang.brigadier.arguments.FloatArgumentType;
@@ -15,7 +17,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public class Motion {
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
 		dispatcher.register(literal("motion")
-				.requires(source -> source.hasPermissionLevel(2))
+				.requires(Permissions.require("usefulcommand.admin", 2))
 				.then(argument("entity", EntityArgumentType.entity())
 						.then(CommandManager.literal("add")
 								.then(argument("x", FloatArgumentType.floatArg())
@@ -58,7 +60,7 @@ public class Motion {
 	private static int addMotion(ServerCommandSource source, Entity entity, float x, float y, float z) {
 		entity.addVelocity(x, y, z);
 		if (entity.isPlayer()) {
-			entity.velocityModified = true;
+			entity.velocityDirty = true;
 		}
 		return 1;
 	}
@@ -66,7 +68,7 @@ public class Motion {
 	private static int setMotion(ServerCommandSource source, Entity entity, float x, float y, float z) {
 		entity.setVelocity(x, y, z);
 		if (entity.isPlayer()) {
-			entity.velocityModified = true;
+			entity.velocityDirty = true;
 		}
 		return 1;
 	}
@@ -75,7 +77,7 @@ public class Motion {
 		Vec3d vec3d = entity.getRotationVector();
 		entity.setVelocity(vec3d.multiply(speed));
 		if (entity.isPlayer()) {
-			entity.velocityModified = true;
+			entity.velocityDirty = true;
 		}
 		return 1;
 	}
@@ -84,9 +86,10 @@ public class Motion {
 		Vec3d vec3d = Vec3d.fromPolar(0, entity.getYaw()).normalize();
 		entity.setVelocity(vec3d.x * speed, y, vec3d.z * speed);
 		if (entity.isPlayer()) {
-			entity.velocityModified = true;
+			entity.velocityDirty = true;
 		}
 		return 1;
 	}
 
 }
+

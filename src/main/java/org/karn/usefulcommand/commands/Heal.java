@@ -1,5 +1,7 @@
 package org.karn.usefulcommand.commands;
 
+import me.lucko.fabric.api.permissions.v0.Permissions;
+
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.FloatArgumentType;
 import net.minecraft.command.argument.EntityArgumentType;
@@ -14,7 +16,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public class Heal {
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
 		dispatcher.register(literal("heal")
-				.requires(source -> source.hasPermissionLevel(2))
+				.requires(Permissions.require("usefulcommand.admin", 2))
 				.then(argument("entity", EntityArgumentType.entity())
 						.then(argument("amount", FloatArgumentType.floatArg(0F))
 								.executes(ctx -> {
@@ -36,3 +38,4 @@ public class Heal {
 	}
 
 }
+

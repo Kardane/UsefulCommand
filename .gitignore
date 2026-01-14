@@ -10,3 +10,5 @@ run
 build
 .gradle
 build_error.log
+.agent
+PROJECT_REVIEW.md

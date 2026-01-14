@@ -1,5 +1,7 @@
 package org.karn.usefulcommand.commands;
 
+import me.lucko.fabric.api.permissions.v0.Permissions;
+
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.FloatArgumentType;
@@ -22,7 +24,7 @@ import static net.minecraft.server.command.CommandManager.literal;
 public class Explosion {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("explosion")
-                .requires(source -> source.hasPermissionLevel(2))
+                .requires(Permissions.require("usefulcommand.admin", 2))
                         .then(argument("pos", Vec3ArgumentType.vec3(true))
                                 .then(argument("power", FloatArgumentType.floatArg())
                                         .executes(ctx -> {
@@ -68,3 +70,4 @@ public class Explosion {
         return (int) power;
     }
 }
+
