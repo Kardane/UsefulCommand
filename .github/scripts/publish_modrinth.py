@@ -91,6 +91,7 @@ def publish(version, path, sha512):
             "game_versions": ["26.3"],
             "version_type": "release",
             "loaders": ["fabric"],
+            "featured": False,
             "status": "listed",
             "project_id": PROJECT_ID,
             "file_parts": ["file"],
