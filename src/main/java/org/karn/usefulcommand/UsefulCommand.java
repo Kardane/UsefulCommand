@@ -3,7 +3,7 @@ package org.karn.usefulcommand;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.entity.player.Player;
 import org.karn.usefulcommand.commands.*;
 
 public class UsefulCommand implements ModInitializer {
@@ -33,7 +33,7 @@ public class UsefulCommand implements ModInitializer {
 		});
 
 		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
-			if (handler.player.hasVehicle() && handler.player.getVehicle() instanceof PlayerEntity)
+			if (handler.player.isPassenger() && handler.player.getVehicle() instanceof Player)
 				handler.player.stopRiding();
 		});
 

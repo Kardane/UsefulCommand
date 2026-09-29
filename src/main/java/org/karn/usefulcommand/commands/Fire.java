@@ -2,57 +2,57 @@ package org.karn.usefulcommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.entity.Entity;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.Text;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
 
-import static net.minecraft.server.command.CommandManager.argument;
-import static net.minecraft.server.command.CommandManager.literal;
+import static net.minecraft.commands.Commands.argument;
+import static net.minecraft.commands.Commands.literal;
 
 public  class Fire {
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(literal("fire")
-                .requires(source -> source.hasPermissionLevel(2))
-                .then(argument("entity", EntityArgumentType.entity())
-                .then(CommandManager.literal("get")
+                .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
+                .then(argument("entity", EntityArgument.entity())
+                .then(Commands.literal("get")
                         .executes(ctx -> {
-                            return getFire(ctx.getSource(),EntityArgumentType.getEntity(ctx,"entity"));
+                            return getFire(ctx.getSource(),EntityArgument.getEntity(ctx,"entity"));
                         })
                 )
-                .then(CommandManager.literal("set")
+                .then(Commands.literal("set")
                         .then(argument("duration", IntegerArgumentType.integer(1))
                                 .executes(ctx -> {
-                                    return setFire(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), true);
+                                    return setFire(ctx.getSource(), EntityArgument.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), true);
                                 })
                         )
                 )
-                .then(CommandManager.literal("add")
+                .then(Commands.literal("add")
                         .then(argument("duration", IntegerArgumentType.integer(1))
                                 .executes(ctx -> {
-                                      return setFire(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), false);
+                                      return setFire(ctx.getSource(), EntityArgument.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), false);
                                 })
                         )
                 )
         ));
     }
 
-    private static int getFire(ServerCommandSource source, Entity entity) {
-        source.sendFeedback(() ->Text.literal("Fire Tick: ").append(String.valueOf(entity.getFireTicks())), false);
-        return entity.getFireTicks();
+    private static int getFire(CommandSourceStack source, Entity entity) {
+        source.sendSuccess(() ->Component.literal("Fire Tick: ").append(String.valueOf(entity.getRemainingFireTicks())), false);
+        return entity.getRemainingFireTicks();
     }
 
-    private static int setFire(ServerCommandSource source, Entity entity, int duration, boolean override) {
+    private static int setFire(CommandSourceStack source, Entity entity, int duration, boolean override) {
         if(override){
-            entity.setFireTicks(duration);
+            entity.setRemainingFireTicks(duration);
         } else {
-            int finalfiretick = entity.getFireTicks() + duration;
-            entity.setFireTicks(finalfiretick);
+            int finalfiretick = entity.getRemainingFireTicks() + duration;
+            entity.setRemainingFireTicks(finalfiretick);
         }
 
-        source.sendFeedback(() ->Text.literal("Fire Tick: ").append(String.valueOf(entity.getFireTicks())), false);
-        return entity.getFireTicks();
+        source.sendSuccess(() ->Component.literal("Fire Tick: ").append(String.valueOf(entity.getRemainingFireTicks())), false);
+        return entity.getRemainingFireTicks();
     }
 
 }

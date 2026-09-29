@@ -4,54 +4,51 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.FloatArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import net.minecraft.command.argument.BlockPosArgumentType;
-import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.command.argument.PosArgument;
-import net.minecraft.command.argument.Vec3ArgumentType;
-import net.minecraft.entity.Entity;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.Text;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.commands.arguments.coordinates.Vec3Argument;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 
-import static net.minecraft.server.command.CommandManager.argument;
-import static net.minecraft.server.command.CommandManager.literal;
+import static net.minecraft.commands.Commands.argument;
+import static net.minecraft.commands.Commands.literal;
 
 public class Explosion {
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(literal("explosion")
-                .requires(source -> source.hasPermissionLevel(2))
-                        .then(argument("pos", Vec3ArgumentType.vec3(true))
+                .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
+                        .then(argument("pos", Vec3Argument.vec3(true))
                                 .then(argument("power", FloatArgumentType.floatArg())
                                         .executes(ctx -> {
-                                            return explode(ctx.getSource(), null, Vec3ArgumentType.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), false, World.ExplosionSourceType.NONE);
+                                            return explode(ctx.getSource(), null, Vec3Argument.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), false, Level.ExplosionInteraction.NONE);
                                         })
-                                        .then(argument("entity", EntityArgumentType.entity())
+                                        .then(argument("entity", EntityArgument.entity())
                                                 .executes(ctx -> {
-                                                    return explode(ctx.getSource(), EntityArgumentType.getEntity(ctx,"entity"), Vec3ArgumentType.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), false, World.ExplosionSourceType.NONE);
+                                                    return explode(ctx.getSource(), EntityArgument.getEntity(ctx,"entity"), Vec3Argument.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), false, Level.ExplosionInteraction.NONE);
                                                 })
                                                 .then(argument("fire", BoolArgumentType.bool())
                                                         .executes(ctx -> {
-                                                            return explode(ctx.getSource(), EntityArgumentType.getEntity(ctx,"entity"), Vec3ArgumentType.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), BoolArgumentType.getBool(ctx,"fire"), World.ExplosionSourceType.NONE);
+                                                            return explode(ctx.getSource(), EntityArgument.getEntity(ctx,"entity"), Vec3Argument.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), BoolArgumentType.getBool(ctx,"fire"), Level.ExplosionInteraction.NONE);
                                                         })
-                                                        .then(CommandManager.literal("none")
+                                                        .then(Commands.literal("none")
                                                                 .executes(ctx -> {
-                                                                    return explode(ctx.getSource(), EntityArgumentType.getEntity(ctx,"entity"), Vec3ArgumentType.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), BoolArgumentType.getBool(ctx,"fire"), World.ExplosionSourceType.NONE);
+                                                                    return explode(ctx.getSource(), EntityArgument.getEntity(ctx,"entity"), Vec3Argument.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), BoolArgumentType.getBool(ctx,"fire"), Level.ExplosionInteraction.NONE);
                                                                 })
                                                         )
-                                                        .then(CommandManager.literal("block")
+                                                        .then(Commands.literal("block")
                                                                 .executes(ctx -> {
-                                                                    return explode(ctx.getSource(), EntityArgumentType.getEntity(ctx,"entity"), Vec3ArgumentType.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), BoolArgumentType.getBool(ctx,"fire"), World.ExplosionSourceType.BLOCK);
+                                                                    return explode(ctx.getSource(), EntityArgument.getEntity(ctx,"entity"), Vec3Argument.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), BoolArgumentType.getBool(ctx,"fire"), Level.ExplosionInteraction.BLOCK);
                                                                 }))
-                                                        .then(CommandManager.literal("mob")
+                                                        .then(Commands.literal("mob")
                                                                 .executes(ctx -> {
-                                                                    return explode(ctx.getSource(), EntityArgumentType.getEntity(ctx,"entity"), Vec3ArgumentType.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), BoolArgumentType.getBool(ctx,"fire"), World.ExplosionSourceType.MOB);
+                                                                    return explode(ctx.getSource(), EntityArgument.getEntity(ctx,"entity"), Vec3Argument.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), BoolArgumentType.getBool(ctx,"fire"), Level.ExplosionInteraction.MOB);
                                                                 }))
-                                                        .then(CommandManager.literal("tnt")
+                                                        .then(Commands.literal("tnt")
                                                                 .executes(ctx -> {
-                                                                    return explode(ctx.getSource(), EntityArgumentType.getEntity(ctx,"entity"), Vec3ArgumentType.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), BoolArgumentType.getBool(ctx,"fire"), World.ExplosionSourceType.TNT);
+                                                                    return explode(ctx.getSource(), EntityArgument.getEntity(ctx,"entity"), Vec3Argument.getVec3(ctx, "pos"), FloatArgumentType.getFloat(ctx, "power"), BoolArgumentType.getBool(ctx,"fire"), Level.ExplosionInteraction.TNT);
                                                                 }))
                                                 )
                                         )
@@ -61,10 +58,10 @@ public class Explosion {
                 );
     }
 
-    private static int explode(ServerCommandSource source, Entity entity, Vec3d pos, float power, boolean createFire, World.ExplosionSourceType sourceType) {
-        World world = source.getWorld();
-        world.createExplosion(entity, pos.getX(), pos.getY(), pos.getZ(), power, createFire, sourceType);
-        source.sendFeedback(() ->Text.literal("Boom!"), false);
+    private static int explode(CommandSourceStack source, Entity entity, Vec3 pos, float power, boolean createFire, Level.ExplosionInteraction sourceType) {
+        Level world = source.getLevel();
+        world.explode(entity, pos.x(), pos.y(), pos.z(), power, createFire, sourceType);
+        source.sendSuccess(() ->Component.literal("Boom!"), false);
         return (int) power;
     }
 }

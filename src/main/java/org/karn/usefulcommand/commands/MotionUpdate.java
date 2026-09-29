@@ -1,29 +1,28 @@
 package org.karn.usefulcommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
-import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.entity.Entity;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.Text;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
 
-import static net.minecraft.server.command.CommandManager.argument;
-import static net.minecraft.server.command.CommandManager.literal;
+import static net.minecraft.commands.Commands.argument;
+import static net.minecraft.commands.Commands.literal;
 
 public class MotionUpdate {
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(literal("motionupdate")
-                .requires(source -> source.hasPermissionLevel(2))
-                .then(argument("entity", EntityArgumentType.entity())
+                .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
+                .then(argument("entity", EntityArgument.entity())
                         .executes(ctx -> {
-                            return motionUpdate(ctx.getSource(), EntityArgumentType.getEntity(ctx,"entity"));
+                            return motionUpdate(ctx.getSource(), EntityArgument.getEntity(ctx,"entity"));
                         })
                 ));
     }
 
-    private static int motionUpdate(ServerCommandSource source, Entity entity) {
-        entity.velocityModified = true;
-        source.sendFeedback(() ->Text.literal("Updated Motion for: ").append(String.valueOf(entity.getDisplayName())), false);
+    private static int motionUpdate(CommandSourceStack source, Entity entity) {
+        entity.syncVelocity = true;
+        source.sendSuccess(() ->Component.literal("Updated Motion for: ").append(String.valueOf(entity.getDisplayName())), false);
         return 1;
     }
 }

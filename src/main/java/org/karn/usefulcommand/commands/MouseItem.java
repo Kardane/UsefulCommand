@@ -2,40 +2,40 @@ package org.karn.usefulcommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 
-import static net.minecraft.server.command.CommandManager.argument;
-import static net.minecraft.server.command.CommandManager.literal;
+import static net.minecraft.commands.Commands.argument;
+import static net.minecraft.commands.Commands.literal;
 
 public class MouseItem {
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(literal("hotbar")
-                .requires(source -> source.hasPermissionLevel(2))
-                .then(argument("player", EntityArgumentType.player())
-                        .then(CommandManager.literal("set")
+                .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
+                .then(argument("player", EntityArgument.player())
+                        .then(Commands.literal("set")
                             .then(argument("num", IntegerArgumentType.integer(0,8))
                                 .executes(ctx -> {
-                                    return hotbarSet(ctx.getSource(), EntityArgumentType.getPlayer(ctx, "player"), ctx.getArgument("num",Integer.class));
+                                    return hotbarSet(ctx.getSource(), EntityArgument.getPlayer(ctx, "player"), ctx.getArgument("num",Integer.class));
                                 })
                             )
                         )
-                        .then(CommandManager.literal("get")
+                        .then(Commands.literal("get")
                                 .executes(ctx -> {
-                                    ctx.getSource().sendFeedback(() -> Text.literal("Selected Slot: ").append(String.valueOf(ctx.getSource().getPlayer().getInventory().getSelectedSlot())), false);
+                                    ctx.getSource().sendSuccess(() -> Component.literal("Selected Slot: ").append(String.valueOf(ctx.getSource().getPlayer().getInventory().getSelectedSlot())), false);
                                     return ctx.getSource().getPlayer().getInventory().getSelectedSlot();
                                 })
                         )
                 ));
     }
 
-    private static int hotbarSet(ServerCommandSource source, ServerPlayerEntity player, int slot) {
+    private static int hotbarSet(CommandSourceStack source, ServerPlayer player, int slot) {
         player.getInventory().setSelectedSlot(slot);
-        source.getServer().getPlayerManager().sendPlayerStatus(player);
-        source.sendFeedback(() -> Text.literal("Selected Slot: ").append(String.valueOf(player.getInventory().getSelectedSlot())), false);
+        source.getServer().getPlayerList().sendAllPlayerInfo(player);
+        source.sendSuccess(() -> Component.literal("Selected Slot: ").append(String.valueOf(player.getInventory().getSelectedSlot())), false);
         return player.getInventory().getSelectedSlot();
     }
 }

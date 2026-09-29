@@ -2,52 +2,50 @@ package org.karn.usefulcommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.FloatArgumentType;
-import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttributeModifier;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.Text;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 
-import static net.minecraft.server.command.CommandManager.argument;
-import static net.minecraft.server.command.CommandManager.literal;
+import static net.minecraft.commands.Commands.argument;
+import static net.minecraft.commands.Commands.literal;
 
 public  class Absorption {
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(literal("absorption")
-                .requires(source -> source.hasPermissionLevel(2))
-                .then(argument("entity", EntityArgumentType.entity())
-                .then(CommandManager.literal("get")
+                .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
+                .then(argument("entity", EntityArgument.entity())
+                .then(Commands.literal("get")
                         .executes(ctx -> {
-                            return getAbsorption(ctx.getSource(), (LivingEntity) EntityArgumentType.getEntity(ctx,"entity"));
+                            return getAbsorption(ctx.getSource(), (LivingEntity) EntityArgument.getEntity(ctx,"entity"));
                         })
                 )
-                .then(CommandManager.literal("set")
+                .then(Commands.literal("set")
                         .then(argument("amount", FloatArgumentType.floatArg(0F))
                                 .executes(ctx -> {
-                                    return setAbsorption(ctx.getSource(), (LivingEntity) EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("amount", Float.class), true);
+                                    return setAbsorption(ctx.getSource(), (LivingEntity) EntityArgument.getEntity(ctx, "entity"), ctx.getArgument("amount", Float.class), true);
                                 })
                         )
                 )
-                .then(CommandManager.literal("add")
+                .then(Commands.literal("add")
                         .then(argument("amount", FloatArgumentType.floatArg(0F))
                                 .executes(ctx -> {
-                                      return setAbsorption(ctx.getSource(), (LivingEntity) EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("amount", Float.class), false);
+                                      return setAbsorption(ctx.getSource(), (LivingEntity) EntityArgument.getEntity(ctx, "entity"), ctx.getArgument("amount", Float.class), false);
                                 })
                         )
                 )
         ));
     }
 
-    private static int getAbsorption(ServerCommandSource source, LivingEntity entity) {
-        source.sendFeedback(() -> Text.literal("Absorption Amount: ").append(String.valueOf(entity.getAbsorptionAmount())), false);
+    private static int getAbsorption(CommandSourceStack source, LivingEntity entity) {
+        source.sendSuccess(() -> Component.literal("Absorption Amount: ").append(String.valueOf(entity.getAbsorptionAmount())), false);
         return (int) entity.getAbsorptionAmount();
     }
 
-    private static int setAbsorption(ServerCommandSource source, LivingEntity entity, float amount, boolean override) {
-        entity.getAttributes().getCustomInstance(EntityAttributes.MAX_ABSORPTION).setBaseValue(amount);
+    private static int setAbsorption(CommandSourceStack source, LivingEntity entity, float amount, boolean override) {
+        entity.getAttributes().getInstance(Attributes.MAX_ABSORPTION).setBaseValue(amount);
         if(override){
             entity.setAbsorptionAmount(amount);
         } else {
@@ -55,7 +53,7 @@ public  class Absorption {
             entity.setAbsorptionAmount(finalabsorption);
         }
 
-        source.sendFeedback(() -> Text.literal("Absorption Amount: ").append(String.valueOf(entity.getAbsorptionAmount())), false);
+        source.sendSuccess(() -> Component.literal("Absorption Amount: ").append(String.valueOf(entity.getAbsorptionAmount())), false);
         return (int) entity.getAbsorptionAmount();
     }
 

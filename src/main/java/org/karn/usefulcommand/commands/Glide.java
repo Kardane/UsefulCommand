@@ -1,28 +1,28 @@
 package org.karn.usefulcommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
-import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.Text;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Player;
 
-import static net.minecraft.server.command.CommandManager.argument;
-import static net.minecraft.server.command.CommandManager.literal;
+import static net.minecraft.commands.Commands.argument;
+import static net.minecraft.commands.Commands.literal;
 
 public  class Glide {
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(literal("glide")
-                .requires(source -> source.hasPermissionLevel(2))
-                .then(argument("player", EntityArgumentType.player())
+                .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
+                .then(argument("player", EntityArgument.player())
                                 .executes(ctx -> {
-                                    return startFallfly(ctx.getSource(), EntityArgumentType.getPlayer(ctx,"player"));
+                                    return startFallfly(ctx.getSource(), EntityArgument.getPlayer(ctx,"player"));
                                 })
                 ));
     }
 
-    private static int startFallfly(ServerCommandSource source, PlayerEntity player) {
-        player.startGliding();
-        source.sendFeedback(() ->Text.literal("Started gliding"), false);
+    private static int startFallfly(CommandSourceStack source, Player player) {
+        player.startFallFlying();
+        source.sendSuccess(() ->Component.literal("Started gliding"), false);
         return 1;
     }
 

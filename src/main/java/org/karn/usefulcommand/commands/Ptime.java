@@ -1,37 +1,41 @@
 package org.karn.usefulcommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.arguments.FloatArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.network.packet.s2c.play.DamageTiltS2CPacket;
-import net.minecraft.network.packet.s2c.play.WorldTimeUpdateS2CPacket;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundSetTimePacket;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.clock.ClockNetworkState;
 
-import static net.minecraft.server.command.CommandManager.argument;
-import static net.minecraft.server.command.CommandManager.literal;
+import java.util.HashMap;
+
+import static net.minecraft.commands.Commands.argument;
+import static net.minecraft.commands.Commands.literal;
 
 public class Ptime {
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(literal("ptime")
-                .requires(source -> source.hasPermissionLevel(2))
-                .then(argument("player", EntityArgumentType.player())
+                .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
+                .then(argument("player", EntityArgument.player())
                         .then(argument("time", IntegerArgumentType.integer(0))
                                 .executes(ctx -> {
-                                    return setPtime(ctx.getSource(), EntityArgumentType.getPlayer(ctx, "player"), ctx.getArgument("time", Integer.class));
+                                    return setPtime(ctx.getSource(), EntityArgument.getPlayer(ctx, "player"), ctx.getArgument("time", Integer.class));
                                 })
                         )
                 ));
     }
 
-    private static int setPtime(ServerCommandSource source, PlayerEntity entity, int time) {
-        ServerPlayerEntity player = (ServerPlayerEntity) entity;
-        player.networkHandler.sendPacket(new WorldTimeUpdateS2CPacket(time, 0, false));
+    private static int setPtime(CommandSourceStack source, Player entity, int time) {
+        ServerPlayer player = (ServerPlayer) entity;
+        ClientboundSetTimePacket current = player.level().clockManager().createFullSyncPacket();
+        var clocks = new HashMap<>(current.clockUpdates());
+        clocks.replaceAll((clock, state) -> new ClockNetworkState(time, 0, 0));
+        player.connection.send(new ClientboundSetTimePacket(current.gameTime(), clocks));
 
-        source.sendFeedback(() -> Text.literal("Set Time: ").append(String.valueOf(time)), false);
+        source.sendSuccess(() -> Component.literal("Set Time: ").append(String.valueOf(time)), false);
         return time;
     }
 }

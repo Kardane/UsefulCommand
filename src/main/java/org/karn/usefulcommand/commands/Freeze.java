@@ -2,57 +2,57 @@ package org.karn.usefulcommand.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import net.minecraft.command.argument.EntityArgumentType;
-import net.minecraft.entity.Entity;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.Text;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
 
-import static net.minecraft.server.command.CommandManager.argument;
-import static net.minecraft.server.command.CommandManager.literal;
+import static net.minecraft.commands.Commands.argument;
+import static net.minecraft.commands.Commands.literal;
 
 public  class Freeze {
-    public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
+    public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(literal("freeze")
-                .requires(source -> source.hasPermissionLevel(2))
-                .then(argument("entity", EntityArgumentType.entity())
-                .then(CommandManager.literal("get")
+                .requires(net.minecraft.commands.Commands.hasPermission(net.minecraft.commands.Commands.LEVEL_GAMEMASTERS))
+                .then(argument("entity", EntityArgument.entity())
+                .then(Commands.literal("get")
                         .executes(ctx -> {
-                            return getFreeze(ctx.getSource(),EntityArgumentType.getEntity(ctx,"entity"));
+                            return getFreeze(ctx.getSource(),EntityArgument.getEntity(ctx,"entity"));
                         })
                 )
-                .then(CommandManager.literal("set")
+                .then(Commands.literal("set")
                         .then(argument("duration", IntegerArgumentType.integer(1))
                                 .executes(ctx -> {
-                                    return setFreeze(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), true);
+                                    return setFreeze(ctx.getSource(), EntityArgument.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), true);
                                 })
                         )
                 )
-                .then(CommandManager.literal("add")
+                .then(Commands.literal("add")
                         .then(argument("duration", IntegerArgumentType.integer(1))
                                 .executes(ctx -> {
-                                      return setFreeze(ctx.getSource(), EntityArgumentType.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), false);
+                                      return setFreeze(ctx.getSource(), EntityArgument.getEntity(ctx, "entity"), ctx.getArgument("duration", Integer.class), false);
                                 })
                         )
                 )
         ));
     }
 
-    private static int getFreeze(ServerCommandSource source, Entity entity) {
-        source.sendFeedback(() ->Text.literal("Freeze Tick: ").append(String.valueOf(entity.getFrozenTicks())), false);
-        return entity.getFrozenTicks();
+    private static int getFreeze(CommandSourceStack source, Entity entity) {
+        source.sendSuccess(() ->Component.literal("Freeze Tick: ").append(String.valueOf(entity.getTicksFrozen())), false);
+        return entity.getTicksFrozen();
     }
 
-    private static int setFreeze(ServerCommandSource source, Entity entity, int duration, boolean override) {
+    private static int setFreeze(CommandSourceStack source, Entity entity, int duration, boolean override) {
         if(override){
-            entity.setFrozenTicks(duration);
+            entity.setTicksFrozen(duration);
         } else {
-            int finalFreezeticks = entity.getFrozenTicks() + duration;
-            entity.setFrozenTicks(finalFreezeticks);
+            int finalFreezeticks = entity.getTicksFrozen() + duration;
+            entity.setTicksFrozen(finalFreezeticks);
         }
 
-        source.sendFeedback(() ->Text.literal("Freeze Tick: ").append(String.valueOf(entity.getFrozenTicks())), false);
-        return entity.getFrozenTicks();
+        source.sendSuccess(() ->Component.literal("Freeze Tick: ").append(String.valueOf(entity.getTicksFrozen())), false);
+        return entity.getTicksFrozen();
     }
 
 }
