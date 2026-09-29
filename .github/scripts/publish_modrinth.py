@@ -29,7 +29,15 @@ def request_json(url, *, data=None, content_type=None, token=None):
         with urllib.request.urlopen(request, timeout=60) as response:
             return json.load(response)
     except urllib.error.HTTPError as error:
-        raise RuntimeError(f"Modrinth API returned HTTP {error.code}") from None
+        raw = error.read().decode("utf-8", errors="replace")
+        if token:
+            raw = raw.replace(token, "[redacted]")
+        try:
+            details = json.loads(raw)
+            reason = f"{details.get('error', 'error')}: {details.get('description', '')}"
+        except json.JSONDecodeError:
+            reason = raw[:500]
+        raise RuntimeError(f"Modrinth API returned HTTP {error.code}: {reason}") from None
 
 
 def version_from_properties():
